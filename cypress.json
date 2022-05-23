@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://www.google.com/",
+  "baseUrl": "https://wellautotng.staging.welltravel.com/en-GB",
   "watchForFileChanges": false,
   "video": true,
   "defaultCommandTimeout": 20000,
@@ -7,5 +7,6 @@
   "retries": {
     "runMode": 1,
     "openMode": 1
-  }
+  },
+  "projectId": "xoay5e"
 }
