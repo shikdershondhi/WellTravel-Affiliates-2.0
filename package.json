@@ -1,40 +1,78 @@
 {
 
   "name": "WellTravel-Affiliates-2.0",
+
   "description": "",
+
   "main": "index.js",
+
   "scripts": {
+
     "clean:reports": "rm cypress/reports/mocha/* || true",
+
     "pretest": "npm run clean:reports",
+
     "scripts": "cypress run --record --key c78aaa25-fd70-4162-997c-57cbcab3fd4e",
+
     "combine-reports": "npx mochawesome-merge \"cypress/reports/mocha/*.json\" > mochawesome.json",
+
     "generate-report": "npx marge mochawesome.json -f report -o cypress/reports/mochareports",
+
     "posttest": "npm run combine-reports && npm run generate-report",
+
     "test": "npm run scripts || npm run posttest",
+
     "cy:open": "cypress open",
+
     "cy:run:smoke": "cypress run --headless --spec cypress/integration/productNames.spec.js --browser electron",
+
     "cy:run:chrome": "cypress run --browser chrome",
+
     "cy:run:firefox": "cypress run --browser firefox",
+
     "cy:run:electron": "cypress run --browser electron",
+
     "cy:run:chrome:headless": "cypress run --browser chrome --headless",
+
     "cy:run:firefox:headless": "npx cypress run --spec 'cypress/integration/**.js'  --browser firefox --headless"
+
   },
+
   "keywords": [
+
     "Cypress",
+
     "App Action",
+
     "Pattern"
+
   ],
+
   "devDependencies": {
+
     "browserify": "^17.0.0",
+
     "cly": "^0.0.0",
+
     "commands": "^0.0.7",
+
     "cucumber": "^6.0.7",
+
     "cy": "^0.0.1",
-    "cypress": "^9.6.1",
+
+    "cypress": "^10.0.2",
+
     "iframe": "^1.0.0",
+
     "react-selector": "^0.0.5",
+
     "select": "^1.1.2",
+
     "wait-until": "^0.0.2",
+
     "xpath": "^0.0.32"
+
   }
+
 }
+
