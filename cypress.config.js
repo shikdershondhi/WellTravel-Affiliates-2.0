@@ -5,18 +5,19 @@ module.exports = defineConfig({
   video: true,
   defaultCommandTimeout: 20000,
   pageLoadTimeout: 60000,
+  viewportWidth:1360,
+  viewportHeight: 763,
   retries: {
-    runMode: 1,
-    openMode: 1,
+    runMode: 0,
+    openMode: 0,
   },
   projectId: 'xoay5e',
   e2e: {
-    // We've imported your old cypress plugins here.
-    // You may want to clean this up later by importing these.
+    //experimentalSessionAndOrigin: true,
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },
-    baseUrl: 'https://wellautotng.staging.welltravel.com/en-GB',
+    baseUrl: 'https://wellautotng.staging.welltravel.com/en-GB/sign_in',
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
   },
 })

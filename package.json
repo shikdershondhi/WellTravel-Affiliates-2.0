@@ -72,7 +72,8 @@
 
     "xpath": "^0.0.32"
 
-  }
-
+  },
+  "author": "shikder",
+  "license": "ISC"
 }
 
