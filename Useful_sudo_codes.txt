@@ -1,0 +1,37 @@
+Login_code
+============
+in commands:
+Cypress.Commands.add('login', (name, { cacheSession = true } = {}) => {
+	const login = () => {
+		cy.visit('')
+		 cy.contains('Log in').click()
+		cy.get('input email field xpath').type('email')
+		cy.get('input password field xpath').type('password')
+		cy.contains('input the sign in button name').click()
+	}
+	if (cacheSession) {
+		cy.session(name, login)
+	} else {
+		login()
+	}
+})
+in code js:
+
+describe.skip('login', () => {
+  it('should redirect to the correct page after logging in', () => {
+     cy.login('user', { cacheSession: false })
+
+     function validate() {
+     cy.request('/api/user').its('status').should('eq', 200)
+     }
+  })
+})
+--------------------------
+
+click multiple times:
+==========================
+import { times } from 'lodash'
+times(0, () => {
+              cy.get('input xpath').should('exist').click().wait(1000)
+            })
+--------------------------

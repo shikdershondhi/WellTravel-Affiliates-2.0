@@ -73,7 +73,16 @@
     "xpath": "^0.0.32"
 
   },
+
   "author": "shikder",
-  "license": "ISC"
+
+  "license": "ISC",
+
+  "dependencies": {
+
+    "lodash": "^4.17.21"
+
+  }
+
 }
 
