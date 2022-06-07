@@ -5,7 +5,6 @@ describe('login', () => {
     cy.validate()
   })
 })
-
       describe('flight Book page',() =>
       {
         it('Search box', () =>

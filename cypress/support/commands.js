@@ -14,7 +14,6 @@ Cypress.Commands.add('login', (name, { cacheSession = true } = {}) => {
 		login()
 	}
 })
-
 Cypress.Commands.add('start_date', () => {
 	cy.get('.flight-form__right-field > .date-picker > .SingleDatePicker > :nth-child(1) > .SingleDatePickerInput > .SingleDatePickerInput_calendarIcon > .icon > svg').click().wait(2000)
 	cy.get('.flight-form__right-field > .date-picker > .SingleDatePicker > :nth-child(1) > .SingleDatePickerInput > .SingleDatePickerInput_clearDate > .SingleDatePickerInput_clearDate_svg > path').click().wait(2000)
