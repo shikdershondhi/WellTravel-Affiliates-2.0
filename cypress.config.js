@@ -1,6 +1,7 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
+  chromeWebSecurity: false,
   watchForFileChanges: false,
   video: true,
   defaultCommandTimeout: 20000,
@@ -17,7 +18,8 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },
-    baseUrl: 'https://wellautotng.staging.welltravel.com/en-GB/',
+
+    //baseUrl: 'https://wellautotng.staging.welltravel.com/en-GB/',
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
   },
 })

@@ -35,3 +35,36 @@ times(0, () => {
               cy.get('input xpath').should('exist').click().wait(1000)
             })
 --------------------------
+new cy
+=======
+
+
+
+Cypress.Commands.add('', () => {
+	cy.get('').click().wait()
+})
+
+--------------
+
+
+iframe
+=====
+
+
+// describe('Recipe: blogs__iframes', () => {
+//   it('fetches post using iframes plugin', () => {
+//     cy.frameLoaded('#\\#welldev-booking-iframe')
+//     // after the frame has loaded, we can use "cy.iframe()"
+//     // to retrieve it
+//     cy.iframe().get('#fullname').click().wait(2000)
+//     cy.iframe().get('#fullname').type('shikder shondhi').wait(2000)
+//     //cy.iframe().find('#number').should('have.text', 'Enter card number').click()
+//   })
+// })
+
+// it('should ', function() {
+//   cy.add_card()
+//   cy.Add_New_Card_part_one()
+//   cy.switchToIframe('#\\#welldev-booking-iframe')
+//   cy.Add_New_Card_part_two()
+// });
