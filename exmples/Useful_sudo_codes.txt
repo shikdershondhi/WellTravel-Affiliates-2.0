@@ -82,4 +82,14 @@ iframe
 // });
 
 ==================
-
+download a file
+===========
+Cypress.Commands.add('travelapp_order_pdf_download', () => {
+	cy.window().document().then(function (doc) {
+		doc.addEventListener('click', () => {
+			setTimeout(function () { doc.location.reload() }, 5000)
+		})
+		cy.get('.public-orders-show__actions > .link > .link__content').click()
+	})
+})
+---------------

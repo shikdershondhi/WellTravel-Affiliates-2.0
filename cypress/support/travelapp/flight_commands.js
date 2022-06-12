@@ -1,16 +1,6 @@
+//==========Flight==============
 import { times } from 'lodash';
 
-Cypress.Commands.add('visit_travelapp', () => {
-	cy.visit('https://wellautotng.staging.welltravel.com/en-GB/')
-})
-
-Cypress.Commands.add('travelapp_login', () => {
-	cy.contains('Log in').click()
-	cy.get(':nth-child(3) > .input > .input__field-holder > .input__field').type('ehatesham@welldev.io')
-	cy.get(':nth-child(4) > .input > .input__field-holder > .input__field').type('asdasd123')
-	cy.contains('Sign In').click()
-})
-//==========Flight==============
 Cypress.Commands.add('travelapp_flight_selection',()=>{
 	cy.get('#tab-0').click().wait(2000)
 })
@@ -56,41 +46,6 @@ Cypress.Commands.add('travelapp_flight_single_flight_type', () => {
 
 Cypress.Commands.add('travelapp_flight_select_farebrand_unknown', () => {
 	cy.get('.matrix-content-slider__container > .matrix-card').click().wait(1000)
-})
-//=======================hotel===========================
-
-Cypress.Commands.add('travelapp_hotel_selection', () => {
-	cy.get('#tab-1').click().wait(2000)
-})
-
-Cypress.Commands.add('travelapp_hotel_room_selection', () => {
-	cy.get('.search-menu__container--rooms > .rcl-popover__parent > .search-menu__menu-label > .search-menu__menu-label--icon > .icon > svg').click().wait(2000)
-
-})
-
-
-//=======================common-cart==========================
-Cypress.Commands.add('travelapp_flight_continue_to_cart', () => {
-	cy.get('.matrix-stepper-control-bar > .button--primary').click().wait(15000)
-})
-
-Cypress.Commands.add('travelapp_Your_Cart', () => {
-	cy.get('.button--tertiary > :nth-child(2)').click().wait(5000)
-})
-
-Cypress.Commands.add('travelapp_Travelers_Information_mybooking', () => {
-	cy.get('.button--tertiary > :nth-child(2)').click().wait(4000)
-
-})
-
-// go to CCV for payment section commands
-
-Cypress.Commands.add('travelapp_Review_book_continue_to_order', () => {
-	cy.get('.button--tertiary > :nth-child(2)').click().wait(3000)
-	cy.get('.book-buttons__button-contents > :nth-child(3) > .button').click().wait(50000)
-	cy.get('.stepper__footer > .button > span').click().wait(2000)
-	cy.get('.public-orders-show__actions > .link > .link__content').click()
-	cy.get('.top-nav__book-button > .link > .link__content').click().wait(2000)
 })
 
 Cypress.Commands.add('travelapp_', () => {
