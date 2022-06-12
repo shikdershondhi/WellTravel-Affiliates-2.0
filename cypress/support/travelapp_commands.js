@@ -89,7 +89,6 @@ Cypress.Commands.add('travelapp_Review_book_continue_to_order', () => {
 	cy.get('.button--tertiary > :nth-child(2)').click().wait(3000)
 	cy.get('.book-buttons__button-contents > :nth-child(3) > .button').click().wait(50000)
 	cy.get('.stepper__footer > .button > span').click().wait(2000)
-	//cy.get('.public-orders-show__actions > .link > .link__content').click()
 	cy.get('.top-nav__book-button > .link > .link__content').click().wait(2000)
 })
 
