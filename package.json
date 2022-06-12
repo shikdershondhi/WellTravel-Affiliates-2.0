@@ -60,11 +60,21 @@
 
     "cy": "^0.0.1",
 
+    "cy-verify-downloads": "^0.1.8",
+
     "cypress": "^10.1.0",
+
+    "cypress-downloadfile": "^1.2.2",
 
     "cypress-iframe": "^1.0.1",
 
+    "cypress-keycloak-commands": "^1.2.0",
+
+    "cypress-otp": "^1.0.3",
+
     "iframe": "^1.0.0",
+
+    "pdfreader": "^2.0.0",
 
     "react-selector": "^0.0.5",
 

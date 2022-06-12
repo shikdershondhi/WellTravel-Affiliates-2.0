@@ -1,7 +1,5 @@
 import 'cypress-iframe'
 
-//==============travelapp-section================
-
 //==============invoice================
 Cypress.Commands.add('travelapp_invoice', () => {
 	cy.get('.paymentsidebar__option-right > .radio > .radio__check').click().wait(3000)
@@ -34,10 +32,3 @@ Cypress.Commands.add('travelapp_Add_New_Card_part_two', () => {
 	cy.iframe('document.querySelector("#fullname")').click().wait(1000)
 	cy.iframe('document.querySelector("#fullname")').type('shikder shondhi').wait(1000)
 })
-
-
-
-
-
-
-//==============agent-admin-section================
