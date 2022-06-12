@@ -1,3 +1,13 @@
+run codes
+=========
+cypress run --browser chrome --headed --spec  ""
+cypress run --browser chrome --spec  ""
+
+
+
+
+
+
 Login_code
 ============
 in commands:
@@ -17,15 +27,17 @@ Cypress.Commands.add('login', (name, { cacheSession = true } = {}) => {
 })
 in code js:
 
-describe.skip('login', () => {
-  it('should redirect to the correct page after logging in', () => {
-     cy.login('user', { cacheSession: false })
-
-     function validate() {
-     cy.request('/api/user').its('status').should('eq', 200)
-     }
-  })
-})
+it('should login', () => {
+		cy.get('.col-y-bleed > .justify-space-between > :nth-child(3)').then(($body) => {
+			if ($body.text().includes('Log in')) {
+				// yup found it
+				cy.login()
+			} else {
+				// nope not here
+				cy.get('.top-nav__book-button > .link > .link__content').click().wait(2000)
+			}
+		})
+	})
 --------------------------
 
 click multiple times:
@@ -65,6 +77,9 @@ iframe
 // it('should ', function() {
 //   cy.add_card()
 //   cy.Add_New_Card_part_one()
-//   cy.switchToIframe('#\\#welldev-booking-iframe')
+//   cy.switchToIframe('#welldev-booking-iframe')
 //   cy.Add_New_Card_part_two()
 // });
+
+==================
+
