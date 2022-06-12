@@ -15,17 +15,17 @@ describe('visit', () => {
 describe('flight Book flow',() =>
 {
 	it('Search box', () => {
-		cy.travelapp_select_trip()
-		cy.travelapp_select_travelers()
-		cy.travelapp_origin_start()
-		cy.travelapp_destination()
-		cy.travelapp_start_date()
-		cy.travelapp_search()
+		cy.travelapp_flight_select_trip_single()
+		cy.travelapp_flight_select_travelers()
+		cy.travelapp_flight_origin_start()
+		cy.travelapp_flight_destination()
+		cy.travelapp_flight_start_date()
+		cy.travelapp_flight_search()
 	})
 	it('flight result page', () => {
-		cy.travelapp_single_flight_type()
-		cy.travelapp_select_farebrand_unknown()
-		cy.travelapp_continue_to_cart()
+		cy.travelapp_flight_single_flight_type()
+		cy.travelapp_flight_select_farebrand_unknown()
+		cy.travelapp_flight_continue_to_cart()
 	})
 	it('cart', () => {
 		cy.travelapp_Your_Cart()
