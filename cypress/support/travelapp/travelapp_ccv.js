@@ -28,7 +28,12 @@ Cypress.Commands.add('travelapp_switchToIframe', iframe => {
 		.then(cy.wrap)
 })
 
+Cypress.Commands.add('test_iframe',()=>{
+	cy.frameLoaded('#\\#welldev-booking-iframe')
+	cy.frameLoaded('#\\#welldev-booking-iframe', { url: '/join' })
+})
+
 Cypress.Commands.add('travelapp_Add_New_Card_part_two', () => {
-	cy.iframe('document.querySelector("#fullname")').click().wait(1000)
-	cy.iframe('document.querySelector("#fullname")').type('shikder shondhi').wait(1000)
+	cy.iframe().find('document.querySelector("#fullname")').should('be.visible').click().wait(1000)
+	cy.iframe().find('document.querySelector("#fullname")').should('be.visible').type('shikder shondhi').wait(1000)
 })

@@ -93,3 +93,10 @@ Cypress.Commands.add('travelapp_order_pdf_download', () => {
 	})
 })
 ---------------
+
+let testData= {}
+before(function(){
+	cy.fixture('example.json').as('example').then(function(data){
+		testData.data =data
+	})
+})

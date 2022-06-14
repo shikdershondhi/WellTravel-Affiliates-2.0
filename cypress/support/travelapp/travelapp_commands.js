@@ -1,15 +1,20 @@
-
+let testData= {}
+before(function(){
+	cy.fixture('travelapp_dataset.json').as('travelapp_dataset').then(function(data){
+		testData.data =data
+	})
+})
 Cypress.Commands.add('visit_travelapp', () => {
 	cy.visit('https://wellautotng.staging.welltravel.com/en-GB/')
+	//cy.visit('http://agent-qa.welltravel.com/#/flights')
 })
 
 Cypress.Commands.add('travelapp_login', () => {
 	cy.contains('Log in').click()
-	cy.get(':nth-child(3) > .input > .input__field-holder > .input__field').type('ehatesham@welldev.io')
-	cy.get(':nth-child(4) > .input > .input__field-holder > .input__field').type('asdasd123')
+	cy.get(':nth-child(3) > .input > .input__field-holder > .input__field').type(testData.data.email)
+	cy.get(':nth-child(4) > .input > .input__field-holder > .input__field').type(testData.data.password)
 	cy.contains('Sign In').click()
 })
-
 //=======================common-cart==========================
 Cypress.Commands.add('travelapp_flight_continue_to_cart', () => {
 	cy.get('.matrix-stepper-control-bar > .button--primary').click().wait(15000)
@@ -17,6 +22,11 @@ Cypress.Commands.add('travelapp_flight_continue_to_cart', () => {
 
 Cypress.Commands.add('travelapp_Your_Cart', () => {
 	cy.get('.button--tertiary > :nth-child(2)').click().wait(5000)
+})
+
+Cypress.Commands.add('travelapp_Your_Cart_review_item', () => {
+	cy.get('.alert__content-text > .col-grid > .button').click().wait(3000)
+	cy.get('.item__actions-confirm-button > .button > span').click().wait(20000)
 })
 
 Cypress.Commands.add('travelapp_Travelers_Information_mybooking', () => {
@@ -43,3 +53,4 @@ Cypress.Commands.add('travelapp_order_pdf_download', () => {
 Cypress.Commands.add('travelapp_back_to_landingpage', () => {
 	cy.get('.top-nav__book-button > .link > .link__content').click().wait(1000)
 })
+
