@@ -1,7 +1,7 @@
 {
 
-	"_visitsite": "http://agent-qa.welltravel.com/en-GB#/flights",
-	"visitsite": "https://welltravel.preview.welltravel.com/#/flights",
+	"visitsite": "http://agent-qa.welltravel.com/en-GB#/flights",
+	"_visitsite": "https://welltravel.preview.welltravel.com/#/flights",
 	"email": "ehatesham.ulislam@welldev.io",
 	"password": "asdasd123",
 	"travelers": "0",
