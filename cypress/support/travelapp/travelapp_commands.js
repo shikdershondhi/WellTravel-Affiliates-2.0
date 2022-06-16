@@ -5,8 +5,8 @@ before(function(){
 	})
 })
 Cypress.Commands.add('visit_travelapp', () => {
-	cy.visit('https://wellautotng.staging.welltravel.com/en-GB/')
-	//cy.visit('http://agent-qa.welltravel.com/#/flights')
+
+	cy.visit(testData.data.visitsite)
 })
 
 Cypress.Commands.add('travelapp_login', () => {
@@ -21,7 +21,17 @@ Cypress.Commands.add('travelapp_flight_continue_to_cart', () => {
 })
 
 Cypress.Commands.add('travelapp_Your_Cart', () => {
-	cy.get('.button--tertiary > :nth-child(2)').click().wait(5000)
+
+	cy.get('.col-lg-8').then(($body) => {
+		if ($body.text().includes('Review Item')) {
+			cy.get('.alert__content-text > .col-grid > .button').click().wait(3000)
+			cy.get('.item__actions-confirm-button > .button > span').click().wait(20000)
+			cy.scrollTo('top',{ensureScrollable: false}).wait(2000)
+			cy.get('.button--tertiary > :nth-child(2)').click().wait(5000)
+		} else {
+			cy.get('.button--tertiary > :nth-child(2)').click().wait(5000)
+		}
+	})
 })
 
 Cypress.Commands.add('travelapp_Your_Cart_review_item', () => {
@@ -37,9 +47,18 @@ Cypress.Commands.add('travelapp_Travelers_Information_mybooking', () => {
 // go to CCV for payment section commands
 
 Cypress.Commands.add('travelapp_Review_book_continue_to_order', () => {
-	cy.get('.button--tertiary > :nth-child(2)').click().wait(3000)
-	cy.get('.book-buttons__button-contents > :nth-child(3) > .button').click().wait(50000)
-	cy.get('.stepper__footer > .button > span').click().wait(2000)
+
+	cy.get('.col-12.review-cart-item').then(($body) => {
+		if ($body.text().includes('Terms and Conditions')) {
+			cy.get('.checkbox__check').click().wait(2000)
+			cy.get('.book-buttons__button-contents > :nth-child(3) > .button').click().wait(50000)
+			cy.get('.stepper__footer > .button > span').click().wait(2000)
+
+		} else {
+			cy.get('.book-buttons__button-contents > :nth-child(3) > .button').click().wait(50000)
+			cy.get('.stepper__footer > .button > span').click().wait(5000)
+		}
+	})
 })
 
 Cypress.Commands.add('travelapp_order_pdf_download', () => {
