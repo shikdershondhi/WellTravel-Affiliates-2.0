@@ -43,17 +43,22 @@ Cypress.Commands.add('travelapp_flight_start_date', () => {
 })
 
 Cypress.Commands.add('travelapp_flight_search', () => {
-	cy.get('.flight-form__bottom-right-action-bar > .button--primary').click().wait(50000)
+	cy.get('.flight-form__bottom-right-action-bar > .button--primary').click().wait(40000)
 })
 
 Cypress.Commands.add('travelapp_flight_single_flight_type', () => {
-	cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').click().wait(10000)
+	cy.get(':nth-child(8) > .card--v2__wrapper > .card__header').click().wait(3000)
+	cy.get(':nth-child(1) > .rcl-checkbox').then(($body) => {
+		if ($body.text().includes(testData.data.airlineselectout)) {
+			cy.get(':nth-child(1) > .rcl-checkbox > .rcl-checkbox__check > .icon > svg').click().wait(4000)
+			cy.scrollTo('top',{ensureScrollable: false}).wait(2000)
+			cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').click().wait(10000)
+		} else {
+			cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').click().wait(10000)
+		}
+	})
 })
 
 Cypress.Commands.add('travelapp_flight_select_farebrand_unknown', () => {
 	cy.get('.matrix-content-slider__container > .matrix-card').click().wait(1000)
-})
-
-Cypress.Commands.add('travelapp_', () => {
-	cy.get('').click().wait()
 })
