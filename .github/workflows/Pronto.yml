@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   pronto:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - uses: ish-wtag/pronto-action@master
