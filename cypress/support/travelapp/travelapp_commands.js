@@ -25,18 +25,13 @@ Cypress.Commands.add('travelapp_Your_Cart', () => {
 	cy.get('.col-lg-8').then(($body) => {
 		if ($body.text().includes('Review Item')) {
 			cy.get('.alert__content-text > .col-grid > .button').click().wait(3000)
-			cy.get('.item__actions-confirm-button > .button > span').click().wait(20000)
+			cy.get('.item__actions-confirm-button > .button > span').click({ multiple: true }).wait(20000)
 			cy.scrollTo('top',{ensureScrollable: false}).wait(2000)
 			cy.get('.button--tertiary > :nth-child(2)').click().wait(5000)
 		} else {
 			cy.get('.button--tertiary > :nth-child(2)').click().wait(5000)
 		}
 	})
-})
-
-Cypress.Commands.add('travelapp_Your_Cart_review_item', () => {
-	cy.get('.alert__content-text > .col-grid > .button').click().wait(3000)
-	cy.get('.item__actions-confirm-button > .button > span').click().wait(20000)
 })
 
 Cypress.Commands.add('travelapp_Travelers_Information_mybooking', () => {
