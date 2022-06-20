@@ -1,15 +1,9 @@
 {
-
 	"_visitsite": "http://agent-qa.welltravel.com/en-GB#/flights",
 	"_visitsite": "https://welltravel.preview.welltravel.com/#/flights",
 	"visitsite": "https://wellautotng.staging.welltravel.com/#/flights",
-	"email": "ehatesham@welldev.io",
-	"password": "asdasd123",
-	"travelers": "0",
-	"origin": "cpt",
-	"destination": "lhr",
-	"flightstartdate": "25 July 2022",
-	"airlineselectout": "LUFTHANSA GERMAN AIRLINES",
-	"_airlineselectout": "LUFTHANSA GERMAN AIRLINES"
 
+
+	"email": "ehatesham@welldev.io",
+	"password": "asdasd123"
 }
