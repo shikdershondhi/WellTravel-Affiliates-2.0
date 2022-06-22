@@ -68,3 +68,7 @@ Cypress.Commands.add('travelapp_flight_single_flight_type', () => {
 Cypress.Commands.add('travelapp_flight_select_farebrand_unknown', () => {
 	cy.get('.matrix-content-slider__container > .matrix-card').click().wait(1000)
 })
+
+Cypress.Commands.add('travelapp_flight_continue_to_cart', () => {
+	cy.get('.matrix-stepper-control-bar > .button--primary').click().wait(15000)
+})

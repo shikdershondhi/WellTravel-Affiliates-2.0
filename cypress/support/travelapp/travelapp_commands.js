@@ -16,10 +16,6 @@ Cypress.Commands.add('travelapp_login', () => {
 	cy.contains('Sign In').click()
 })
 //=======================common-cart==========================
-Cypress.Commands.add('travelapp_flight_continue_to_cart', () => {
-	cy.get('.matrix-stepper-control-bar > .button--primary').click().wait(15000)
-})
-
 Cypress.Commands.add('travelapp_Your_Cart', () => {
 
 	cy.get('.col-lg-8').then(($body) => {
