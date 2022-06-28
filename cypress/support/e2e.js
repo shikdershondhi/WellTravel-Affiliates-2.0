@@ -7,7 +7,9 @@ import './travelapp/hotel_commands'
 import './travelapp/car_commands'
 import './agent_admin/agent-admin_commands'
 import './agent_admin/agent-admin_flight_commands'
+import './agent_admin/agent-admin_hotel_commands'
 import './agent_admin/agent_admin_ccv'
+
 
 Cypress.on('uncaught:exception', (err, runnable) => {
 	return false

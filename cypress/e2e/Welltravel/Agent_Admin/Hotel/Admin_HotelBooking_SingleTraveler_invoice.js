@@ -11,37 +11,36 @@ describe('visit admin URL', () => {
 		cy.get('.login-pf-page').then(($body) => {
 			if ($body.text().includes('Sign In')) {
 				cy.agent_admin_login()
+				cy.agent_admin_hotel_selection()
 			} else {
-				cy.agent_admin_flight_selection()
+				cy.agent_admin_hotel_selection()
 			}
 		})
 	})
 })
 
-describe('admin flight Book flow',() =>
+describe('admin hotel Book flow',() =>
 {
 	beforeEach(()=>{
 		Cypress.Cookies.defaults({
 			preserve: ['AUTH_SESSION_ID', 'AUTH_SESSION_ID_LEGACY', 'KC_RESTART', 'KEYCLOAK_REMEMBER_ME','chat-server-session', 'io','_agent_session', 'locale', 'remember_token'],
 		})
 	})
-	it('admin flight Search box', () => {
-		cy.agent_admin_flight_select_trip_single()
-		cy.agent_admin_flight_select_travelers()
-		cy.agent_admin_flight_origin_start()
-		cy.agent_admin_flight_destination()
-		cy.agent_admin_flight_start_date()
-		cy.agent_admin_flight_Channels_amadeus()
-		cy.agent_admin_flight_search()
-
+	it('admin hotel Search box', () => {
+		//cy.agent_admin_hotel_select_room()
+		//cy.agent_admin_hotel_select_travelers()
+		cy.agent_admin_hotel_location()
+		cy.agent_admin_hotel_checkin()
+		cy.agent_admin_hotel_checkout()
+		cy.agent_admin_hotel_Channels_amadeus()
+		cy.agent_admin_hotel_search()
 	})
-	it('admin flight result page', () => {
-		cy.agent_admin_flight_single_flight_type()
-		cy.agent_admin_flight_continue_to_cart()
+	it('admin hotel result page', () => {
+		cy.agent_admin_hotel_select_room()
 	})
 	it('admin cart', () => {
 		cy.agent_admin_Your_Cart()
-		cy.agent_admin_flight_Travelers_Information_booking()
+		cy.agent_admin_hotel_Travelers_Information_booking()
 		cy.agent_admin_invoice()
 	})
 	it('admin should take order ', ()=> {

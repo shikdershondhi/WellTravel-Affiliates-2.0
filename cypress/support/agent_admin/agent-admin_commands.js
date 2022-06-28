@@ -15,7 +15,7 @@ Cypress.Commands.add('visit_agent_admin', () => {
 	cy.visit(admintestData.admindata.visitsiteadmin)
 })
 
-Cypress.Commands.add('agent_admin__login', () => {
+Cypress.Commands.add('agent_admin_login', () => {
 	cy.get('#username').type(admintestData.admindata.email)
 	cy.get('#password').type(admintestData.admindata.password)
 	cy.get('#kc-login').click()
@@ -35,12 +35,6 @@ Cypress.Commands.add('agent_admin_Your_Cart', () => {
 	})
 })
 
-Cypress.Commands.add('agent_admin_Travelers_Information_booking', () => {
-	cy.get('.traveler-search-form__search-traveler-header-search-bar > .input > .input__field-holder > .input__field').click().wait(1000)
-	cy.get('.traveler-search-form__search-traveler-header-search-bar > .input > .input__field-holder > .input__field').type(admin_flight_testData.admin_flight_data.agent_admin_Travelers_Information_booking).wait(15000)
-	cy.get('.radio__check > .icon > svg').click().wait(4000)
-	cy.get('.button--tertiary > :nth-child(2)').should('be.visible').click().wait(4000)
-})
 //===== go to ccv ============
 Cypress.Commands.add('agent_admin_Review_book_continue_to_order', () => {
 

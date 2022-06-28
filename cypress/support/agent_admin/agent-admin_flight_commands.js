@@ -81,3 +81,10 @@ Cypress.Commands.add('agent_admin_flight_select_farebrand_unknown', () => {
 Cypress.Commands.add('agent_admin_flight_continue_to_cart', () => {
 	cy.get('.matrix-stepper__footer > :nth-child(1) > .matrix-stepper-control-bar > .button--primary').click().wait(15000)
 })
+
+Cypress.Commands.add('agent_admin_flight_Travelers_Information_booking', () => {
+	cy.get('.traveler-search-form__search-traveler-header-search-bar > .input > .input__field-holder > .input__field').click().wait(1000)
+	cy.get('.traveler-search-form__search-traveler-header-search-bar > .input > .input__field-holder > .input__field').type(admin_flight_testData.admin_flight_data.agent_admin_flight_Travelers_Information_booking).wait(15000)
+	cy.get('.radio__check > .icon > svg').click().wait(4000)
+	cy.get('.button--tertiary > :nth-child(2)').should('be.visible').click().wait(4000)
+})
