@@ -13,7 +13,6 @@ module.exports = defineConfig({
     openMode: 0,
   },
   projectId: 'ikifk8',
-  //npx cypress run --record --key 28cc2fb1-43f9-4af5-9303-eae00dae3029
 
   e2e: {
     //experimentalSessionAndOrigin: true,

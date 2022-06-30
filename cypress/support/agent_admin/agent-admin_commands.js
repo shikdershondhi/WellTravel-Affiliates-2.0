@@ -43,12 +43,12 @@ Cypress.Commands.add('agent_admin_Review_book_continue_to_order', () => {
 			cy.get('.checkbox__check').click().wait(2000)
 			cy.get('.base-modal__link > .button').click().wait(2000)
 			cy.get('.book-button__button > .button').click().wait(2000)
-			cy.get(':nth-child(3) > .book-buttons__modal-button > .button').click().wait(50000)
+			cy.get(':nth-child(3) > .book-buttons__modal-button > .button').click().wait(70000)
 			cy.get('.stepper__footer > .button > span').click().wait(3000)
 		} else {
 			cy.get('.base-modal__link > .button').click().wait(2000)
 			cy.get('.book-button__button > .button').click().wait(2000)
-			cy.get(':nth-child(3) > .book-buttons__modal-button > .button').click().wait(50000)
+			cy.get(':nth-child(3) > .book-buttons__modal-button > .button').click().wait(70000)
 			cy.get('.stepper__footer > .button > span').click().wait(3000)
 		}
 	})

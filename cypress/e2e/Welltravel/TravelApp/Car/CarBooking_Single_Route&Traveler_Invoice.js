@@ -6,6 +6,7 @@ describe('visit_URL', () => {
 		cy.get('.col-y-bleed > .justify-space-between > :nth-child(3)').then(($body) => {
 			if ($body.text().includes('Log in')) {
 				cy.travelapp_login()
+				cy.travelapp_car_selection()
 			} else {
 				cy.travelapp_car_selection()
 			}

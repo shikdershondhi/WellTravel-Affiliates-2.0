@@ -35,8 +35,7 @@ Cypress.Commands.add('Search_by_airport',()=> {
 })
 
 Cypress.Commands.add('Pick_up_airport',()=>{
-	cy.get('.car-form__field--add-padding-right > .select-box > .select-box-wrapper > .select-box-container > .select-box__control > .select-box__value-container').click().wait(2000)
-	cy.get('#react-select-6-input').type(cartestData.cardata.Pick_up_airport).wait(1000)
+	cy.get('.car-form__field--add-padding-right > .select-box > .select-box-wrapper > .select-box-container > .select-box__control > .select-box__value-container').type(cartestData.cardata.Pick_up_airport).wait(1000)
 	cy.get(':nth-child(2) > .car-form__field--add-padding-left > .select-box > .select-box-wrapper > .select-box-container > .select-box__control > .select-box__value-container').click()
 })
 

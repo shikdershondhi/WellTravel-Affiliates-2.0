@@ -12,7 +12,7 @@
 
     "pretest": "npm run clean:reports",
 
-    "scripts": "cypress run --record --key c78aaa25-fd70-4162-997c-57cbcab3fd4e",
+    "scripts": "cypress run --record --key 28cc2fb1-43f9-4af5-9303-eae00dae3029",
 
     "combine-reports": "npx mochawesome-merge \"cypress/reports/mocha/*.json\" > mochawesome.json",
 
@@ -24,11 +24,11 @@
 
     "cy:open": "cypress open",
 
-    "cy:run:smoke": "cypress run --headless --spec cypress/integration/productNames.spec.js --browser electron",
+    "cy:run:smoke": "cypress run --headless --spec cypress/integration/productNames.spec.js --browser chrome",
 
-    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:chrome": "cypress run --browser chrome --headed",
 
-    "cy:run:firefox": "cypress run --browser firefox",
+    "cy:run:firefox": "cypress run --browser firefox --headed",
 
     "cy:run:electron": "cypress run --browser electron",
 
@@ -62,7 +62,7 @@
 
     "cy-verify-downloads": "^0.1.8",
 
-    "cypress": "^10.2.0",
+    "cypress": "^10.3.0",
 
     "cypress-downloadfile": "^1.2.2",
 
