@@ -6,8 +6,6 @@ cypress run --browser chrome --spec  ""
 
 
 
-
-
 Login_code
 ============
 in commands:

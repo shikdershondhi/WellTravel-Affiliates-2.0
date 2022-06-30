@@ -6,6 +6,7 @@ describe('Visit Travelapp', () => {
 		cy.get('.col-y-bleed > .justify-space-between > :nth-child(3)').then(($body) => {
 			if ($body.text().includes('Log in')) {
 				cy.travelapp_login()
+				cy.travelapp_hotel_selection()
 			} else {
 				cy.travelapp_hotel_selection()
 			}
