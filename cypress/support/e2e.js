@@ -10,6 +10,7 @@ import './agent_admin/agent-admin_flight_commands'
 import './agent_admin/agent-admin_hotel_commands'
 import './agent_admin/agent-admin_car_commands'
 import './agent_admin/agent_admin_ccv'
+import './approval_process/approval_process_commands'
 
 
 Cypress.on('uncaught:exception', (err, runnable) => {
