@@ -37,7 +37,6 @@ Cypress.Commands.add('travelapp_Your_Cart', () => {
 
 Cypress.Commands.add('travelapp_Travelers_Information_mybooking', () => {
 	cy.get('.button--tertiary > :nth-child(2)').click().wait(4000)
-
 })
 
 // go to CCV for payment section commands
