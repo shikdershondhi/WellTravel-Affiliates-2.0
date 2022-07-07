@@ -15,6 +15,11 @@ Cypress.Commands.add('travelapp_login', () => {
 	cy.get(':nth-child(4) > .input > .input__field-holder > .input__field').type(testData.data.password)
 	cy.contains('Sign In').click()
 })
+Cypress.Commands.add('travelapp_logout', () => {
+	cy.get('.top-nav__avatar > .rcl-avatar > .rcl-avatar__content').click().wait(1000)
+	cy.get(':nth-child(7) > [data-testid="wrapperWithLink"]').click().wait(1000)
+})
+
 //=======================common-cart==========================
 Cypress.Commands.add('travelapp_Your_Cart', () => {
 
@@ -32,7 +37,6 @@ Cypress.Commands.add('travelapp_Your_Cart', () => {
 
 Cypress.Commands.add('travelapp_Travelers_Information_mybooking', () => {
 	cy.get('.button--tertiary > :nth-child(2)').click().wait(4000)
-
 })
 
 // go to CCV for payment section commands
@@ -44,13 +48,13 @@ Cypress.Commands.add('travelapp_Review_book_continue_to_order', () => {
 			cy.get('.checkbox__check').click().wait(2000)
 			cy.get('.book-buttons__button-contents > :nth-child(3) > .button').click().wait(50000)
 			cy.get('.stepper__footer > .button > span').click().wait(2000)
-
 		} else {
 			cy.get('.book-buttons__button-contents > :nth-child(3) > .button').click().wait(50000)
 			cy.get('.stepper__footer > .button > span').click().wait(5000)
 		}
 	})
 })
+
 
 Cypress.Commands.add('travelapp_order_pdf_download', () => {
 	cy.window().document().then(function (doc) {

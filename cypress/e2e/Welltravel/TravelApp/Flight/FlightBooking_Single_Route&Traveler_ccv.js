@@ -8,6 +8,8 @@ describe('visit_URL', () => {
 				cy.travelapp_login()
 				cy.travelapp_flight_selection()
 			} else {
+				cy.travelapp_logout()
+				cy.travelapp_login()
 				cy.travelapp_flight_selection()
 			}
 		})
@@ -31,12 +33,16 @@ describe('flight Book flow',() =>
 	it('cart', () => {
 		cy.travelapp_Your_Cart()
 		cy.travelapp_Travelers_Information_mybooking()
-		cy.travelapp_invoice()
+	})
+	it('approval process & payment system ', ()=> {
+		cy.approval_process_pre_process()
 	})
 	it('should take order ', ()=> {
 		cy.travelapp_Review_book_continue_to_order()
-		cy.travelapp_order_pdf_download()
-		cy.travelapp_back_to_landingpage()
-		})
+	})
+	it('approval process post-process ', ()=> {
+		cy.approval_process_post_and_pdf_download()
+		cy.travelapp_logout()
+	})
 
 })
