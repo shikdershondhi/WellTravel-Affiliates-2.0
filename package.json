@@ -28,6 +28,8 @@
 
     "cy:run:chrome": "cypress run --browser chrome --headed",
 
+    "cy:run:chrome": "cypress run --browser chrome --headed --spec",
+
     "cy:run:firefox": "cypress run --browser firefox --headed",
 
     "cy:run:electron": "cypress run --browser electron",
