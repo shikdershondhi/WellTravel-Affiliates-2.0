@@ -8,42 +8,66 @@ Cypress is a next generation front end testing tool built for the modern web. Th
 3. There are a lot dependencies that are not updated frequently in parallel with cypress. So while installing if you are seeing conflicts use`npm i --force`.
 4. Run `npm test` to execute the tests in Test Runner | Run `npx cypress run` to execute the tests in CLI
 5. To create HTML reports execute first `npm run test:cli` and then `npm run create:html:report`
-# Articles on Cypress
-- [How to Install Cypress](https://testersdock.com/how-to-install-cypress/)
-- [Understanding Cypress Folder Structure](https://testersdock.com/cypress-folder-structure/)
-- [How to execute Cypress Tests using Test Runner and CLI](https://testersdock.com/cypress-test-runner-cli/)
-- [Writing your First Test in Cypress](https://testersdock.com/first-cypress-test/)
-- [How to use Fixtures in Cypress Tests](https://testersdock.com/cypress-fixtures/)
-- [How to use readFile() and writeFile() in Cypress](https://testersdock.com/cypress-writefile-readfile/)
-- [How to interact with multiple elements using each()](https://testersdock.com/cypress-each/)
-- [Conditional Testing (If Else) in Cypress](https://testersdock.com/cypress-conditional-if-else-testing/)
-- [How to upload a file in Cypress](https://testersdock.com/cypress-file-upload/)
-- [How to download a file in Cypress](https://testersdock.com/cypress-file-download/)
-- [API Testing in Cypress](https://testersdock.com/cypress-api-testing/)
-- [How to chain Multiple APIs in Cypress](https://testersdock.com/cypress-chain-multiple-api/)
-- [Mock API Response in Cypress using cy.server() and cy.route()](https://testersdock.com/cypress-mock-api/)
-- [How to handle JS Alert, Confirm and Prompt in Cypress](https://testersdock.com/cypress-javascript-alert-confirm-prompt/)
-- [How to use Skip and Only in Cypress](https://testersdock.com/skip-only-cypress/)
-- [How to execute Cypress Tests in order](https://testersdock.com/cypress-execute-tests-in-order/)
-- [How to handle Shadow DOM in Cypress](https://testersdock.com/cypress-shadow-dom/)
-- [How to retry tests X number of times in Cypress](https://testersdock.com/test-retries-in-cypress/)
-- [How to handle Iframes in Cypress](https://testersdock.com/iframes-cypress/)
-- [How to generate HTML reports in Cypress](https://testersdock.com/html-reports-cypress/)
-- [How to Add Tags like Smoke,E2E to Cypress Tests](https://testersdock.com/cypress-test-tags/)
-- [Cypress Page Object with Locator Functions and Custom Commands](https://testersdock.com/cypress-page-object-with-locator-function-and-custom-command/)
-- [Cypress Dashboard](https://testersdock.com/cypress-dashboard/)
-- [How to visually generate tests with no coding in Cypress Studio](https://testersdock.com/cypress-studio/)
-- [How to mock an API using cy.intercept()](https://testersdock.com/cypress-mock-api-intercept/)
-- [How to integrate cypress with cucumber](https://testersdock.com/cypress-cucumber-bdd/)
-- [How to hover over elements in Cypress](https://testersdock.com/cypress-hover/)
-- [How to perform Database Testing(SQL) in Cypress](https://testersdock.com/cypress-database-testing/)
-- [How to use parents(), parent() and children() commands in Cypress](https://testersdock.com/cypress-parents-parent-children/)
-- [How to perform Drag and Drop on HTML and Angular sites with Cypress](https://testersdock.com/cypress-drag-and-drop-html-angular/)
-- [How to handle new browser tab and window in Cypress](https://testersdock.com/cypress-new-window/)
-- [How to use filter(), find() and within() commands in Cypress](https://testersdock.com/cypress-filter-find-within/)
-- [Commonly used JQuery commands in Cypress](https://testersdock.com/cypress-jquery/)
-- [How to do recursion in Cypress](https://testersdock.com/cypress-recursion/)
-- [How to handle basic auth in Cypress](https://testersdock.com/cypress-basic-auth/)
+
+#####
+please insert this code to package json file
+
+"scripts": {
+
+    "clean:reports": "rm cypress/reports/mocha/* || true",
+
+    "pretest": "npm run clean:reports",
+
+    "scripts": "cypress run --record --key 28cc2fb1-43f9-4af5-9303-eae00dae3029",
+
+    "combine-reports": "npx mochawesome-merge \"cypress/reports/mocha/*.json\" > mochawesome.json",
+
+    "generate-report": "npx marge mochawesome.json -f report -o cypress/reports/mochareports",
+
+    "posttest": "npm run combine-reports && npm run generate-report",
+
+    "test": "npm run scripts || npm run posttest",
+
+    "cy:open": "cypress open",
+
+    "cy:run:smoke": "cypress run --headless --spec cypress/integration/productNames.spec.js --browser chrome",
+
+    "cy:run:chrome": "cypress run --browser chrome --headed",
+
+    "cy:run:chrome--spec": "cypress run --browser chrome --headed --spec",
+
+    "cy:run:firefox": "cypress run --browser firefox --headed",
+
+    "cy:run:electron": "cypress run --browser electron",
+
+    "cy:run:chrome:headless": "cypress run --browser chrome --headless",
+
+    "cy:run:firefox:headless": "npx cypress run --spec 'cypress/integration/**.js'  --browser firefox --headless",
+
+
+    "_________________________________________________________________": "____________________________________________",
+
+
+    "cy:run:setting:Global_policy_set": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Setting/Global_policy_set.js'  --browser chrome --headed",
+
+    "cy:run:setting:Approval_config_pre": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Setting/Approval_config_pre.js'  --browser chrome --headed",
+
+    "cy:run:setting:Approval_config_post": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Setting/Approval_config_post.js'  --browser chrome --headed",
+
+    "cy:run:FlightBooking_Single_Route&Traveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Flight/FlightBooking_Single_Route&Traveler_invoice.js'  --browser chrome --headed",
+
+    "cy:run:HotelBooking_SingleTraveler&location_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Hotel/HotelBooking_SingleTraveler&location_invoice.js'  --browser chrome --headed",
+
+    "cy:run:CarBooking_Single_Route&Traveler_Invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Car/CarBooking_Single_Route&Traveler_Invoice.js'  --browser chrome --headed",
+
+    "cy:run:Admin_FlightBooking_Single_Route&Traveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Flight/Admin_FlightBooking_Single_Route&Traveler_invoice.js'  --browser chrome --headed",
+
+    "cy:run:Admin_HotelBooking_SingleTraveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Hotel/Admin_HotelBooking_SingleTraveler_invoice.js'  --browser chrome --headed",
+
+    "cy:run:Admin_CarBooking_SingleTraveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Car/Admin_CarBooking_SingleTraveler_invoice.js'  --browser chrome --headed"
+
+},
+
 
 # Running All Specs
 - When you're running your tests from the Test Runner, make sure that none of the tests has `only`, as this basically tells cypress to run that particular test and skip all others.

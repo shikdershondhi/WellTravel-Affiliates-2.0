@@ -50,6 +50,10 @@
 
     "cy:run:FlightBooking_Single_Route&Traveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Flight/FlightBooking_Single_Route&Traveler_invoice.js'  --browser chrome --headed",
 
+    "cy:run:FlightBooking_RoundTrip&Traveler_Invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Flight/FlightBooking_RoundTrip&Traveler_Invoice.js'  --browser chrome --headed",
+
+    "cy:run:FlightBooking_Multicitytrip&Traveler_Invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Flight/FlightBooking_Multicitytrip&Traveler_Invoice.js'  --browser chrome --headed",
+
     "cy:run:HotelBooking_SingleTraveler&location_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Hotel/HotelBooking_SingleTraveler&location_invoice.js'  --browser chrome --headed",
 
     "cy:run:CarBooking_Single_Route&Traveler_Invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Car/CarBooking_Single_Route&Traveler_Invoice.js'  --browser chrome --headed",
