@@ -31,6 +31,8 @@ describe('admin set global policy: ',() => {
 		cy.agent_admin_approval_required()
 	})
 	it.skip('Delete policy:', () => {
+		cy.agent_admin_setting()
+		cy.agent_admin_global_policies()
 		cy.agent_admin_policy_delete()
 	})
 })
