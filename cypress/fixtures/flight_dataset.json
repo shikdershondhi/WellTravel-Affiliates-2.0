@@ -1,8 +1,31 @@
 {
-  "travelers": "0",
+
+  "travelers": "1",
+
+"onewaytrip_roundtrip":{
+
   "origin": "cpt",
   "destination": "lhr",
   "flightstartdate": "12 August 2022",
+  "flightreturndate": "18 August 2022",
   "airlineselectout": "LUFTHANSA GERMAN AIRLINES",
   "_airlineselectout": "LUFTHANSA GERMAN AIRLINES"
+},
+
+"multipletrip": {
+
+
+  "trip_one_origin": "cpt",
+  "trip_one_destination": "lhr",
+  "trip_one_flightstartdate": "12 August 2022",
+
+  "trip_two_origin": "lhr",
+  "trip_two_destination": "cpt",
+  "trip_two_flightstartdate": "18 August 2022",
+
+  "trip_three_origin": "ams",
+  "trip_three_destination": "dxb",
+  "trip_three_flightstartdate": "22 August 2022"
+
+}
 }
