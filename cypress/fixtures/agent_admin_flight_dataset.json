@@ -15,9 +15,16 @@
     "trip_one_flightstartdate": "August 5, 2022",
     "flight_type_one": "KLM-ROYAL DUTCH AIRLINES",
 
-    "trip_two_origin": "lhr",
-    "trip_two_destination": "cpt",
+    "trip_two_origin": "ams",
+    "trip_two_destination": "fra",
     "trip_two_flightstartdate": "August 10, 2022",
-    "flight_type_two": "KLM-ROYAL DUTCH AIRLINES"
+    "flight_type_two": "KLM-ROYAL DUTCH AIRLINES",
+
+    "_if_select_multicity": "then feelup the next part",
+
+    "trip_three_origin": "dxb",
+    "trip_three_destination": "dur",
+    "trip_three_flightstartdate": "August 15, 2022",
+    "flight_type_three": "KLM-ROYAL DUTCH AIRLINES"
   }
 }

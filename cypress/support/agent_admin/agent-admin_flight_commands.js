@@ -93,14 +93,40 @@ Cypress.Commands.add('agent_admin_flight_single_flight_type_two', () => {
 })
 
 //========================
+
+//==========Multi_city Flight==============
+Cypress.Commands.add('agent_admin_flight_select_multicity_trip', () => {
+	cy.get(':nth-child(1) > .rcl-popover__parent > .search-menu__menu-label > .search-menu__menu-label--icon > .icon > svg').click().wait(2000) // trip selection
+	cy.get('.rcl-menu__item > :nth-child(3) > [data-testid="wrapperWithoutLink"]').click().wait(1000)  // one way selection
+})
+
+Cypress.Commands.add('agent_admin_flight_trip_three', () => {
+	cy.get('.flight-form__holder-advanced--show > :nth-child(4) > :nth-child(1) > :nth-child(2) > :nth-child(1) > .select-box > .select-box-wrapper > .select-box-container > .select-box__control > .select-box__value-container').type(admin_flight_testData.admin_flight_data.agent_admin_Round_trip.trip_three_origin).wait(2000)
+	cy.get(':nth-child(4) > :nth-child(1) > :nth-child(2) > :nth-child(2) > .select-box > .select-box-wrapper > .select-box-container > .select-box__control > .select-box__value-container').type(admin_flight_testData.admin_flight_data.agent_admin_Round_trip.trip_three_destination).wait(2000)
+	cy.get(':nth-child(4) > :nth-child(1) > :nth-child(2) > :nth-child(3) > .date-picker > .SingleDatePicker > :nth-child(1) > .SingleDatePickerInput > .SingleDatePickerInput_clearDate > .SingleDatePickerInput_clearDate_svg').click().wait(1000)
+	cy.get(':nth-child(4) > :nth-child(1) > :nth-child(2) > :nth-child(3) > .date-picker > .SingleDatePicker > :nth-child(1) > .SingleDatePickerInput').type(admin_flight_testData.admin_flight_data.agent_admin_Round_trip.trip_three_flightstartdate).wait(2000)
+})
+
+Cypress.Commands.add('agent_admin_flight_single_flight_type_three', () => {
+			cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').click().wait(5000)
+			cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').click().wait(5000)
+			cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').click().wait(5000)
+})
+
+//========================
+
 Cypress.Commands.add('agent_admin_flight_Channels_amadeus',()=>{
-	cy.get('.search-accounts > .col-grid > .checkbox > .checkbox__check').click().wait(1000)
-	cy.get('.amadeus-settings > .search-accounts__account > .checkbox > .checkbox__check').click().wait(2000)
+	cy.get('.search-accounts > .col-grid > .checkbox').find(":checkbox").uncheck({force: true}).wait(2000)
+	cy.get('.amadeus-settings > .search-accounts__account > .checkbox').find(":checkbox").uncheck({force: true}).wait(2000)
+	cy.get('.lh_group-settings > .search-accounts__account > .checkbox').find(":checkbox").uncheck({force: true}).wait(2000)
+	cy.get('.amadeus-settings > .search-accounts__account > .checkbox').find(":checkbox").check({force: true}).wait(2000)
 })
 
 Cypress.Commands.add('agent_admin_flight_Channels_LHGroup',()=>{
-	cy.get('.search-accounts > .col-grid > .checkbox > .checkbox__check').click().wait(1000)
-	cy.get('.lh_group-settings > .search-accounts__account > .checkbox > .checkbox__check').click().wait(2000)
+	cy.get('.search-accounts > .col-grid > .checkbox').find(":checkbox").uncheck({force: true}).wait(2000)
+	cy.get('.lh_group-settings > .search-accounts__account > .checkbox').find(":checkbox").uncheck({force: true}).wait(2000)
+	cy.get('.amadeus-settings > .search-accounts__account > .checkbox').find(":checkbox").uncheck({force: true}).wait(2000)
+	cy.get('.lh_group-settings > .search-accounts__account > .checkbox').find(":checkbox").check({force: true}).wait(2000)
 })
 
 Cypress.Commands.add('agent_admin_flight_search', () => {
@@ -120,8 +146,10 @@ Cypress.Commands.add('agent_admin_flight_single_flight_type', () => {
 	})
 })
 
-Cypress.Commands.add('agent_admin_flight_select_farebrand_unknown', () => {
-	cy.get('.matrix-channel-row > .matrix-content-slider > .matrix-content-slider__container').click().wait(1000)
+Cypress.Commands.add('agent_admin_flight_select_farebrand_multicity_continue_to_cart', () => {
+	cy.get('.matrix-stepper__footer > :nth-child(1) > .matrix-stepper-control-bar > .button--primary').click().wait(3000)
+	cy.get('.matrix-stepper__footer > :nth-child(1) > .matrix-stepper-control-bar > .button--primary').click().wait(3000)
+	cy.get('.matrix-stepper__footer > :nth-child(1) > .matrix-stepper-control-bar > .button--primary').click().wait(15000)
 })
 
 Cypress.Commands.add('agent_admin_flight_continue_to_cart', () => {
