@@ -8,7 +8,7 @@
 
   "scripts": {
 
-    "clean:reports": "rm cypress/reports/mocha/* || true",
+    "clean:reports": "rm -rf cypress/reports/html/ || true",
 
     "pretest": "npm run clean:reports",
 
