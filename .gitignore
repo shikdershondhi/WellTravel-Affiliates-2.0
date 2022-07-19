@@ -25,3 +25,6 @@ hs_err_pid*
 /cypress/videos
 /node_modules
 /.DS_Store
+/cypress/reports/
+/exmples/
+/cypress/reports/html/
