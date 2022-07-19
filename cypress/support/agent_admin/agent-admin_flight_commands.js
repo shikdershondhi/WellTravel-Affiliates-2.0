@@ -33,20 +33,66 @@ Cypress.Commands.add('agent_admin_flight_select_travelers', () => {
 
 Cypress.Commands.add('agent_admin_flight_origin_start', () => {
 	cy.get(':nth-child(1) > :nth-child(1) > .select-box > .select-box-wrapper > .select-box-container > .select-box__control > .select-box__value-container').click().wait(1000)
-	cy.get('#react-select-6-input').type(admin_flight_testData.admin_flight_data.agent_admin_flight_origin_start).wait(2000)
+	cy.get('#react-select-6-input').type(admin_flight_testData.admin_flight_data.agent_admin_single_trip.flight_origin_start).wait(2000)
 })
 
 Cypress.Commands.add('agent_admin_flight_destination', () => {
 	cy.get(':nth-child(1) > :nth-child(1) > :nth-child(2) > .select-box > .select-box-wrapper > .select-box-container > .select-box__control > .select-box__value-container').click().wait(1000)
-	cy.get('#react-select-7-input').type(admin_flight_testData.admin_flight_data.agent_admin_flight_destination).wait(2000)
+	cy.get('#react-select-7-input').type(admin_flight_testData.admin_flight_data.agent_admin_single_trip.flight_destination).wait(2000)
 })
 
 Cypress.Commands.add('agent_admin_flight_start_date', () => {
 	cy.get('.SingleDatePickerInput_calendarIcon > .icon > svg').click().wait(2000)
 	cy.get('.SingleDatePickerInput_clearDate_svg').click().wait(2000)
-	cy.get('.flight-form__advanced-trip-container > :nth-child(1) > :nth-child(1) > :nth-child(3)').type(admin_flight_testData.admin_flight_data.agent_admin_flight_start_date).wait(2000)
+	cy.get('.flight-form__advanced-trip-container > :nth-child(1) > :nth-child(1) > :nth-child(3)').type(admin_flight_testData.admin_flight_data.agent_admin_single_trip.flight_start_date).wait(2000)
+})
+//==========round Flight==============
+Cypress.Commands.add('agent_admin_flight_select_round_trip', () => {
+	cy.get(':nth-child(1) > .rcl-popover__parent > .search-menu__menu-label > .search-menu__menu-label--icon > .icon > svg').click().wait(2000) // trip selection
+	cy.get('.rcl-menu__item > :nth-child(2) > [data-testid="wrapperWithoutLink"]').click().wait(1000)  // one way selection
 })
 
+Cypress.Commands.add('agent_admin_flight_trip_one', () => {
+	cy.get(':nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(1) > .select-box > .select-box-wrapper > .select-box-container > .select-box__control > .select-box__value-container').type(admin_flight_testData.admin_flight_data.agent_admin_Round_trip.trip_one_origin).wait(2000)
+	cy.get(':nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(2) > .select-box > .select-box-wrapper > .select-box-container > .select-box__control > .select-box__value-container').type(admin_flight_testData.admin_flight_data.agent_admin_Round_trip.trip_one_destination).wait(2000)
+	cy.get(':nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(3) > .date-picker > .SingleDatePicker > :nth-child(1) > .SingleDatePickerInput > .SingleDatePickerInput_clearDate > .SingleDatePickerInput_clearDate_svg').click().wait(1000)
+	cy.get(':nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(3) > .date-picker > .SingleDatePicker > :nth-child(1) > .SingleDatePickerInput').type(admin_flight_testData.admin_flight_data.agent_admin_Round_trip.trip_one_flightstartdate).wait(2000)
+})
+
+Cypress.Commands.add('agent_admin_flight_trip_two', () => {
+	cy.get(':nth-child(3) > :nth-child(1) > :nth-child(2) > :nth-child(1) > .select-box > .select-box-wrapper > .select-box-container > .select-box__control > .select-box__value-container').type(admin_flight_testData.admin_flight_data.agent_admin_Round_trip.trip_two_origin).wait(2000)
+	cy.get(':nth-child(3) > :nth-child(1) > :nth-child(2) > :nth-child(2) > .select-box > .select-box-wrapper > .select-box-container > .select-box__control > .select-box__value-container').type(admin_flight_testData.admin_flight_data.agent_admin_Round_trip.trip_two_destination).wait(2000)
+	cy.get(':nth-child(3) > :nth-child(1) > :nth-child(2) > :nth-child(3) > .date-picker > .SingleDatePicker > :nth-child(1) > .SingleDatePickerInput > .SingleDatePickerInput_clearDate > .SingleDatePickerInput_clearDate_svg').click().wait(1000)
+	cy.get(':nth-child(3) > :nth-child(1) > :nth-child(2) > :nth-child(3) > .date-picker > .SingleDatePicker > :nth-child(1) > .SingleDatePickerInput').type(admin_flight_testData.admin_flight_data.agent_admin_Round_trip.trip_two_flightstartdate).wait(2000)
+})
+
+Cypress.Commands.add('agent_admin_flight_single_flight_type_one', () => {
+	cy.get(':nth-child(8) > .card--v2__wrapper > .card__header').click().wait(3000)
+	cy.get(':nth-child(1) > .rcl-checkbox').then(($body) => {
+		if ($body.text().includes(admin_flight_testData.admin_flight_data.agent_admin_Round_trip.flight_type_one)) {
+			cy.get(':nth-child(1) > .rcl-checkbox > .rcl-checkbox__check > .icon > svg').click().wait(4000)
+			cy.scrollTo('top',{ensureScrollable: false}).wait(2000)
+			cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').click().wait(10000)
+		} else {
+			cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').click().wait(10000)
+		}
+	})
+})
+
+Cypress.Commands.add('agent_admin_flight_single_flight_type_two', () => {
+	cy.get(':nth-child(8) > .card--v2__wrapper > .card__header').click().wait(3000)
+	cy.get(':nth-child(1) > .rcl-checkbox').then(($body) => {
+		if ($body.text().includes(admin_flight_testData.admin_flight_data.agent_admin_Round_trip.flight_type_two)) {
+			cy.get(':nth-child(1) > .rcl-checkbox > .rcl-checkbox__check > .icon > svg').click().wait(4000)
+			cy.scrollTo('top',{ensureScrollable: false}).wait(2000)
+			cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').click().wait(10000)
+		} else {
+			cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').click().wait(10000)
+		}
+	})
+})
+
+//========================
 Cypress.Commands.add('agent_admin_flight_Channels_amadeus',()=>{
 	cy.get('.search-accounts > .col-grid > .checkbox > .checkbox__check').click().wait(1000)
 	cy.get('.amadeus-settings > .search-accounts__account > .checkbox > .checkbox__check').click().wait(2000)
@@ -64,7 +110,7 @@ Cypress.Commands.add('agent_admin_flight_search', () => {
 Cypress.Commands.add('agent_admin_flight_single_flight_type', () => {
 	cy.get(':nth-child(8) > .card--v2__wrapper > .card__header').click().wait(3000)
 	cy.get(':nth-child(1) > .rcl-checkbox').then(($body) => {
-		if ($body.text().includes(admin_flight_testData.admin_flight_data.agent_admin_flight_single_flight_type)) {
+		if ($body.text().includes(admin_flight_testData.admin_flight_data.agent_admin_single_trip.flight_single_flight_type)) {
 			cy.get(':nth-child(1) > .rcl-checkbox > .rcl-checkbox__check > .icon > svg').click().wait(4000)
 			cy.scrollTo('top',{ensureScrollable: false}).wait(2000)
 			cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').click().wait(10000)

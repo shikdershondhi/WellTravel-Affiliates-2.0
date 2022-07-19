@@ -10,7 +10,7 @@ before(function(){
 		flighttestData.flightdata =flightdata
 	})
 })
-//==========single Flight==============
+//==========single & round Flight trip==============
 import { times } from 'lodash';
 
 Cypress.Commands.add('travelapp_flight_selection',()=>{
@@ -35,7 +35,7 @@ Cypress.Commands.add('travelapp_flight_select_trip_multicitytrip', () => {
 Cypress.Commands.add('travelapp_flight_select_travelers', () => {
 	cy.get('.search-menu__container--traveller-amount > .rcl-popover__parent > .search-menu__menu-label > .search-menu__menu-label--icon > .icon > svg').click().wait(2000)
 	// select travelers
-	times(flighttestData.flightdata.onewaytrip_roundtrip.travelers, () => {
+	times(flighttestData.flightdata.travelers, () => {
 		cy.get(':nth-child(1) > .quantity-selector > :nth-child(3) > .quantity-selector__icon > .icon > svg > path').should('exist').click().wait(1000)
 	})
 	cy.get('.search-menu__container--traveller-amount > .rcl-popover__parent > .search-menu__menu-label > .search-menu__menu-label--icon > .icon > svg').click().wait(2000)
@@ -120,9 +120,9 @@ Cypress.Commands.add('travelapp_flight_trip_three', () => {
 Cypress.Commands.add('travelapp_flight_multicity_flight_type', () => {
 	cy.scrollTo('top').wait(4000)
 	cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').click().wait(3000)
-	cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').scrollIntoView({force: true}).wait(2000)
+	cy.scrollTo('top').wait(2000)
 	cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').click().wait(3000)
-	cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').scrollIntoView({force: true}).wait(2000)
+	cy.scrollTo('top').wait(2000)
 	cy.get(':nth-child(2) > .flight > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .flight__services > .button').click().wait(3000)
 })
 
