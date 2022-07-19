@@ -12,7 +12,7 @@ import './agent_admin/agent-admin_car_commands'
 import './agent_admin/agent_admin_ccv'
 import './approval_process/approval_process_commands'
 import './agent_admin/agent_admin_global_policy'
-
+import 'cypress-mochawesome-reporter/register'
 
 Cypress.on('uncaught:exception', (err, runnable) => {
 	return false

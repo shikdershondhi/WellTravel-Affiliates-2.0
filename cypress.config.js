@@ -4,6 +4,14 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   watchForFileChanges: false,
   video: true,
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    charts: true,
+    reportPageTitle: 'custom-title',
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveAllAttempts: false,
+  },
   defaultCommandTimeout: 10000,
   pageLoadTimeout: 50000,
   viewportWidth:1360,
@@ -18,6 +26,7 @@ module.exports = defineConfig({
     //experimentalSessionAndOrigin: true,
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
+      require('cypress-mochawesome-reporter/plugin')(on);
     },
 
     //baseUrl: 'https://wellautotng.staging.welltravel.com/en-GB/',

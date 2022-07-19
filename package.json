@@ -14,9 +14,9 @@
 
     "scripts": "cypress run --record --key 28cc2fb1-43f9-4af5-9303-eae00dae3029",
 
-    "combine-reports": "npx mochawesome-merge \"cypress/reports/mocha/*.json\" > mochawesome.json",
+    "combine-reports": "npx mochawesome-merge \"cypress/reports/html/.jsons/*.json\" > mochawesome.json",
 
-    "generate-report": "npx marge mochawesome.json -f report -o cypress/reports/mochareports",
+    "generate-report": "npx marge mochawesome.json -f report -o cypress/reports/html/.jsons/",
 
     "posttest": "npm run combine-reports && npm run generate-report",
 
@@ -38,9 +38,7 @@
 
     "cy:run:firefox:headless": "npx cypress run --spec 'cypress/integration/**.js'  --browser firefox --headless",
 
-
     "_________________________________________________________________": "____________________________________________",
-
 
     "cy:run:setting:Global_policy_set": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Setting/Global_policy_set.js'  --browser chrome --headed",
 
@@ -92,6 +90,8 @@
 
     "cypress": "^10.3.0",
 
+    "cypress-commands": "^1.1.0",
+
     "cypress-downloadfile": "^1.2.2",
 
     "cypress-iframe": "^1.0.1",
@@ -101,6 +101,14 @@
     "cypress-otp": "^1.0.3",
 
     "iframe": "^1.0.0",
+
+    "mocha": "^10.0.0",
+
+    "mochawesome": "^7.1.3",
+
+    "mochawesome-merge": "^4.2.1",
+
+    "mochawesome-report-generator": "^6.2.0",
 
     "pdfreader": "^2.0.0",
 
@@ -120,9 +128,13 @@
 
   "dependencies": {
 
+    "cypress-mochawesome-reporter": "^3.2.0",
+
     "jsmin": "^1.0.1",
 
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+
+    "mochawesome-merge": "^4.2.1"
 
   }
 
