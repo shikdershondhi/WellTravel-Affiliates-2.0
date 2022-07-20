@@ -24,10 +24,9 @@ describe('admin set global policy: ',() => {
 			preserve: ['AUTH_SESSION_ID', 'AUTH_SESSION_ID_LEGACY', 'KC_RESTART', 'KEYCLOAK_REMEMBER_ME', 'chat-server-session', 'io', '_agent_session', 'locale', 'remember_token'],
 		})
 	})
-	it('Go to setting part:',() => {
+	it('Delete policy:', () => {
 		cy.agent_admin_setting()
 		cy.agent_admin_global_policies()
-		cy.agent_admin_add_new_policy()
-		cy.agent_admin_approval_required()
+		cy.agent_admin_policy_delete()
 	})
 })
