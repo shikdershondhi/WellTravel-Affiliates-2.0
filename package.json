@@ -8,9 +8,13 @@
 
   "scripts": {
 
-    "clean:reports": "rm -rf cypress/reports/ || true",
+    "clean:reports": "rm -rf cypress/reports/html || true",
 
-    "pretest": "npm run clean:reports",
+    "clean:screenshots": "rm -rf cypress/screenshots || true",
+
+    "clean:videos": "rm -rf cypress/videos || true",
+
+    "pretest": "npm run clean:reports && npm run clean:screenshots && npm run clean:videos",
 
     "scripts": "cypress run --record --key 28cc2fb1-43f9-4af5-9303-eae00dae3029",
 
@@ -40,27 +44,33 @@
 
     "_________________________________________________________________": "____________________________________________",
 
-    "cy:run:setting:Global_policy_set": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Setting/Global_policy_set.js'  --browser chrome --headed",
+    "Global_policy_set": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Setting/Global_policy_set.js'  --browser chrome --headless",
 
-    "cy:run:setting:Approval_config_pre": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Setting/Approval_config_pre.js'  --browser chrome --headed",
+    "Global_policy_delete": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Setting/Global_policy_delete.js'  --browser chrome --headless",
 
-    "cy:run:setting:Approval_config_post": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Setting/Approval_config_post.js'  --browser chrome --headed",
+    "Approval_config_pre": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Setting/Approval_config_pre.js'  --browser chrome --headless",
 
-    "cy:run:FlightBooking_Single_Route&Traveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Flight/FlightBooking_Single_Route&Traveler_invoice.js'  --browser chrome --headed",
+    "Approval_config_post": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Setting/Approval_config_post.js'  --browser chrome --headless",
 
-    "cy:run:FlightBooking_RoundTrip&Traveler_Invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Flight/FlightBooking_RoundTrip&Traveler_Invoice.js'  --browser chrome --headed",
+    "Approval-process-pre": "npm run pretest && npm run Global_policy_set && npm run Approval_config_pre && npm run FlightBooking_Single_Route_Traveler_invoice && npm run Global_policy_delete && npm run posttest",
 
-    "cy:run:FlightBooking_Multicitytrip&Traveler_Invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Flight/FlightBooking_Multicitytrip&Traveler_Invoice.js'  --browser chrome --headed",
+    "Approval-process-post": "npm run pretest && npm run Global_policy_set && npm run Approval_config_post && npm run FlightBooking_Single_Route_Traveler_invoice && npm run Global_policy_delete && npm run posttest",
 
-    "cy:run:HotelBooking_SingleTraveler&location_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Hotel/HotelBooking_SingleTraveler&location_invoice.js'  --browser chrome --headed",
+    "FlightBooking_Single_Route_Traveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Flight/FlightBooking_Single_Route&Traveler_invoice.js'  --browser chrome --headless",
 
-    "cy:run:CarBooking_Single_Route&Traveler_Invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Car/CarBooking_Single_Route&Traveler_Invoice.js'  --browser chrome --headed",
+    "FlightBooking_RoundTrip_Traveler_Invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Flight/FlightBooking_RoundTrip&Traveler_Invoice.js'  --browser chrome --headless",
 
-    "cy:run:Admin_FlightBooking_Single_Route&Traveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Flight/Admin_FlightBooking_Single_Route&Traveler_invoice.js'  --browser chrome --headed",
+    "FlightBooking_Multicitytrip_Traveler_Invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Flight/FlightBooking_Multicitytrip&Traveler_Invoice.js'  --browser chrome --headless",
 
-    "cy:run:Admin_HotelBooking_SingleTraveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Hotel/Admin_HotelBooking_SingleTraveler_invoice.js'  --browser chrome --headed",
+    "HotelBooking_SingleTraveler_location_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Hotel/HotelBooking_SingleTraveler&location_invoice.js'  --browser chrome --headless",
 
-    "cy:run:Admin_CarBooking_SingleTraveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Car/Admin_CarBooking_SingleTraveler_invoice.js'  --browser chrome --headed"
+    "CarBooking_Single_Route_Traveler_Invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Car/CarBooking_Single_Route&Traveler_Invoice.js'  --browser chrome --headless",
+
+    "Admin_FlightBooking_Single_Route_Traveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Flight/Admin_FlightBooking_Single_Route&Traveler_invoice.js'  --browser chrome --headless",
+
+    "Admin_HotelBooking_SingleTraveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Hotel/Admin_HotelBooking_SingleTraveler_invoice.js'  --browser chrome --headless",
+
+    "Admin_CarBooking_SingleTraveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Car/Admin_CarBooking_SingleTraveler_invoice.js'  --browser chrome --headless"
 
   },
 
@@ -88,7 +98,7 @@
 
     "cy-verify-downloads": "^0.1.8",
 
-    "cypress": "^10.3.0",
+    "cypress": "^10.3.1",
 
     "cypress-commands": "^1.1.0",
 
@@ -137,6 +147,7 @@
     "lodash": "^4.17.21",
 
     "mochawesome-merge": "^4.2.1"
+
 
   }
 

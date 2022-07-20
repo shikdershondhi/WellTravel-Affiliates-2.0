@@ -32,7 +32,7 @@ describe('admin hotel Book flow',() =>
 		cy.agent_admin_hotel_location()
 		cy.agent_admin_hotel_checkin()
 		cy.agent_admin_hotel_checkout()
-		cy.agent_admin_hotel_Channels_amadeus()
+		//cy.agent_admin_hotel_Channels_amadeus()
 		cy.agent_admin_hotel_search()
 	})
 	it('admin hotel result page', () => {

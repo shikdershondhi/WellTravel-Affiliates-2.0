@@ -4,6 +4,7 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   watchForFileChanges: false,
   video: true,
+  trashAssetsBeforeRuns: false,
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,
@@ -11,6 +12,7 @@ module.exports = defineConfig({
     embeddedScreenshots: true,
     inlineAssets: true,
     saveAllAttempts: false,
+    overwrite: false,
   },
   defaultCommandTimeout: 10000,
   pageLoadTimeout: 50000,

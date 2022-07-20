@@ -31,7 +31,7 @@ describe('admin car Book flow',() =>
 		cy.agent_admin_car_Pick_up_location()
 		cy.agent_admin_car_driver_age()
 		cy.agent_admin_car_Pick_up_date()
-		cy.agent_admin_car_Channels_amadeus()
+		//cy.agent_admin_car_Channels_amadeus()
 		cy.agent_admin_car_search()
 	})
 	it('admin car Search box by airport', () => {

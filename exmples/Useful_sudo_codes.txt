@@ -3,7 +3,13 @@ run codes
 cypress run --browser chrome --headed --spec  ""
 cypress run --browser chrome --spec  ""
 
+cy.get('').then(($body) => {
+		if ($body.text().includes('')) {
 
+		} else {
+
+		}
+	})
 
 
 Login_code

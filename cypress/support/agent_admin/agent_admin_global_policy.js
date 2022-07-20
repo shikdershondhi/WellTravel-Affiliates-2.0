@@ -30,7 +30,15 @@ Cypress.Commands.add('agent_admin_approval_required', () => {
 })
 
 Cypress.Commands.add('agent_admin_policy_delete', () => {
-	cy.get(':nth-child(2) > .link__content > .icon-button__icon > .icon > svg > path').click().wait(2000)
+	//cy.get(':nth-child(2) > .link__content > .icon-button__icon > .icon > svg > path').click({multiple: true}).wait(2000)
+	cy.get('.app__content').then(($body) => {
+		if ($body.text().includes('Action')) {
+			cy.get(':nth-child(2) > .link__content > .icon-button__icon > .icon > svg > path').click({multiple: true}).wait(4000)
+		} else {
+			cy.get('.table__head > .table__row > :nth-child(1)').should('be.visible').scrollIntoView()
+		}
+	})
+
 })
 
 //==========================pre===============================
@@ -49,16 +57,16 @@ Cypress.Commands.add('agent_admin_organisations_edit', () => {
 
 Cypress.Commands.add('agent_admin_organisations_pre', () => {
 	cy.get('.organization-edit-section__actions > .icon-button > .icon-button__icon > .icon > svg > path').click().wait(2000)
-	cy.get(':nth-child(3) > .organization-edit-general-information__field--with-padding > .checkbox').find(":checkbox").uncheck({force: true}).wait(2000)
+	cy.get(':nth-child(3) > .organization-edit-general-information__field--with-padding > .checkbox').find(":checkbox").uncheck({force: true}).wait(4000)
 	cy.get('.col-2 > :nth-child(1) > .icon-button__icon > .icon > svg > path').click({force: true}).wait(2000)
-	cy.get(':nth-child(1) > .side-nav__list-item > .side-nav__list-item-icon > .icon > svg > path').click()
+	//cy.get(':nth-child(1) > .side-nav__list-item > .side-nav__list-item-icon > .icon > svg > path').click()
 })
 
 //==================post====================
 
 Cypress.Commands.add('agent_admin_organisations_post', () => {
 	cy.get('.organization-edit-section__actions > .icon-button > .icon-button__icon > .icon > svg > path').click().wait(2000)
-	cy.get(':nth-child(3) > .organization-edit-general-information__field--with-padding > .checkbox').find(":checkbox").check({force: true}).wait(2000)
+	cy.get(':nth-child(3) > .organization-edit-general-information__field--with-padding > .checkbox').find(":checkbox").check({force: true}).wait(4000)
 	cy.get('.col-2 > :nth-child(1) > .icon-button__icon > .icon > svg > path').click({force: true}).wait(2000)
-	cy.get(':nth-child(1) > .side-nav__list-item > .side-nav__list-item-icon > .icon > svg > path').click()
+	//cy.get(':nth-child(1) > .side-nav__list-item > .side-nav__list-item-icon > .icon > svg > path').click()
 })
