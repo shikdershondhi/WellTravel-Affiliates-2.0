@@ -8,7 +8,7 @@
 
   "scripts": {
 
-    "clean:reports": "rm -rf cypress/reports/html/ || true",
+    "clean:reports": "rm -rf cypress/reports/ || true",
 
     "pretest": "npm run clean:reports",
 
