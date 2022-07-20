@@ -18,13 +18,16 @@
 *.zip
 *.tar.gz
 *.rar
+*.jpg
+*.html
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/screenshots
+/cypress/screenshots
 /cypress/videos
+/cypress/downloads
 /node_modules
 /.DS_Store
-/cypress/reports/
-/exmples/
-/cypress/reports/html/
+/cypress/reports
+/exmples
+mochawesome.json
