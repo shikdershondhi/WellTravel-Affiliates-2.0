@@ -86,6 +86,8 @@
 
   "devDependencies": {
 
+    "@faker-js/faker": "^7.3.0",
+
     "browserify": "^17.0.0",
 
     "cly": "^0.0.0",
@@ -147,7 +149,6 @@
     "lodash": "^4.17.21",
 
     "mochawesome-merge": "^4.2.1"
-
 
   }
 
