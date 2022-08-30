@@ -36,7 +36,7 @@ describe('admin flight Book flow',() =>
 	})
 	it('admin flight result page', () => {
 		cy.agent_admin_flight_single_flight_type_three()
-		cy.agent_admin_flight_select_farebrand_multicity_continue_to_cart()
+		cy.agent_admin_flight_continue_to_cart()
 	})
 	it('admin cart', () => {
 		cy.agent_admin_Your_Cart()

@@ -16,8 +16,8 @@ Cypress.Commands.add('travelapp_login', () => {
 	cy.contains('Sign In').click()
 })
 Cypress.Commands.add('travelapp_logout', () => {
-	cy.get('.top-nav__avatar > .rcl-avatar > .rcl-avatar__content').click().wait(1000)
-	cy.get(':nth-child(7) > [data-testid="wrapperWithLink"]').click().wait(1000)
+	cy.get('.top-nav__avatar > .rcl-avatar').click().wait(1000)
+	cy.get(':nth-child(7) > [data-testid="wrapperWithLink"]').click({force: true}).wait(1000)
 })
 
 //=======================common-cart==========================
