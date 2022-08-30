@@ -46,9 +46,9 @@ Cypress.Commands.add('agent_admin_Review_book_continue_to_order', () => {
 			cy.get(':nth-child(3) > .book-buttons__modal-button > .button').click().wait(70000)
 			cy.get('.stepper__footer > .button > span').click().wait(3000)
 		} else {
-			cy.get('.base-modal__link > .button').click().wait(2000)
-			cy.get('.book-button__button > .button').click().wait(2000)
-			cy.get(':nth-child(3) > .book-buttons__modal-button > .button').click().wait(70000)
+			cy.get('.book-buttons__button-contents > .button--primary').click().wait(2000)
+			cy.get(':nth-child(1) > .book-button__modal-button > .button').click({force:true}).wait(5000)
+			cy.get(':nth-child(3) > .book-button__modal-button > .button').click().wait(70000)
 			cy.get('.stepper__footer > .button > span').click().wait(3000)
 		}
 	})

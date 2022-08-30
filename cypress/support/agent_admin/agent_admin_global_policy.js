@@ -4,7 +4,7 @@ Cypress.Commands.add('agent_admin_setting', () => {
 })
 
 Cypress.Commands.add('agent_admin_global_policies', () => {
-	cy.get(':nth-child(12) > span').click().wait(2000)
+	cy.get(':nth-child(15) > span').click().wait(2000)
 })
 
 Cypress.Commands.add('agent_admin_add_new_policy', () => {
@@ -65,8 +65,8 @@ Cypress.Commands.add('agent_admin_organisations_pre', () => {
 //==================post====================
 
 Cypress.Commands.add('agent_admin_organisations_post', () => {
-	cy.get('.organization-edit-section__actions > .icon-button > .icon-button__icon > .icon > svg > path').click().wait(2000)
-	cy.get(':nth-child(3) > .organization-edit-general-information__field--with-padding > .checkbox').find(":checkbox").check({force: true}).wait(4000)
-	cy.get('.col-2 > :nth-child(1) > .icon-button__icon > .icon > svg > path').click({force: true}).wait(2000)
-	//cy.get(':nth-child(1) > .side-nav__list-item > .side-nav__list-item-icon > .icon > svg > path').click()
+	cy.get('.organization-edit-section__actions > .icon-button > .icon-button__icon > .icon > svg > path').click().wait(4000)
+	cy.get(':nth-child(3) > .organization-edit-general-information__field--with-padding > .checkbox').find(":checkbox").check({force: true}).wait(7000)
+	cy.get('.col-2 > :nth-child(1) > .icon-button__icon > .icon > svg > path').click({force: true}).wait(5000)
+	cy.get(':nth-child(1) > .side-nav__list-item > .side-nav__list-item-icon > .icon > svg > path').click()
 })
