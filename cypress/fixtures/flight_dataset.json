@@ -5,7 +5,7 @@
 "onewaytrip_roundtrip":{
 
   "origin": "ams",
-  "destination": "dxb",
+  "destination": "fra",
   "flightstartdate": "4 October 2022",
   "flightreturndate": "10 October 2022",
   "airlineselectout": "KLM-ROYAL DUTCH AIRLINES",
