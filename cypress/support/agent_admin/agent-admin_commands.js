@@ -54,6 +54,10 @@ Cypress.Commands.add('agent_admin_Review_book_continue_to_order', () => {
 	})
 })
 
+Cypress.Commands.add('agent_admin_Redemption_Vouchers',()=>{
+	cy.get('.col-4 > .input > .input__field-holder > .input__field').wait(1000).type(admintestData.admindata.redemptionvouchers).wait(2000)
+})
+
 Cypress.Commands.add('agent_admin_order_page', () => {
 	cy.get('.breadcrumbs > :nth-child(1) > a').click().wait(2000)
 })

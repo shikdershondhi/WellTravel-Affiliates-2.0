@@ -41,6 +41,11 @@ Cypress.Commands.add('travelapp_Travelers_Information_mybooking', () => {
 
 // go to CCV for payment section commands
 
+Cypress.Commands.add('travelapp_Redemption_Vouchers',()=>{
+	cy.get('.col-4 > .input > .input__field-holder > .input__field').wait(1000).type(testData.data.redemptionvouchers).wait(2000)
+})
+
+
 Cypress.Commands.add('travelapp_Review_book_continue_to_order', () => {
 
 	cy.get('.col-12.review-cart-item').then(($body) => {

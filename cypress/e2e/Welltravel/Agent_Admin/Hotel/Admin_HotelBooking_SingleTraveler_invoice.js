@@ -42,6 +42,8 @@ describe('admin hotel Book flow',() =>
 		cy.agent_admin_Your_Cart()
 		cy.agent_admin_hotel_Travelers_Information_booking()
 		cy.agent_admin_invoice()
+		cy.agent_admin_Redemption_Vouchers()
+		cy.agent_admin_next_step_four()
 	})
 	it('admin should take order ', ()=> {
 		cy.agent_admin_Review_book_continue_to_order()

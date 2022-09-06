@@ -26,22 +26,24 @@ describe('admin flight Book flow',() =>
 		})
 	})
 	it('admin flight Search box', () => {
-		cy.agent_admin_flight_select_multicity_trip()
+		cy.agent_admin_flight_select_round_trip()
 		cy.agent_admin_flight_select_travelers()
 		cy.agent_admin_flight_trip_one()
 		cy.agent_admin_flight_trip_two()
-		cy.agent_admin_flight_trip_three()
 		cy.agent_admin_flight_Channels_amadeus()
 		cy.agent_admin_flight_search()
 	})
 	it('admin flight result page', () => {
-		cy.agent_admin_flight_single_flight_type_three()
+		cy.agent_admin_flight_single_flight_type_one()
+		cy.agent_admin_flight_single_flight_type_two()
 		cy.agent_admin_flight_continue_to_cart()
 	})
 	it('admin cart', () => {
 		cy.agent_admin_Your_Cart()
 		cy.agent_admin_flight_Travelers_Information_booking()
 		cy.agent_admin_invoice()
+		cy.agent_admin_Redemption_Vouchers()
+		cy.agent_admin_next_step_four()
 	})
 	it('admin should take order ', ()=> {
 		cy.agent_admin_Review_book_continue_to_order()

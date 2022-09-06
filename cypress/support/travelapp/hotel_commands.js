@@ -47,8 +47,8 @@ Cypress.Commands.add('travelapp_hotel_traveler_selection_children', () => {
 
 Cypress.Commands.add('travelapp_hotel_location', () => {
 	cy.get('.location-search-input__input > .input > .input__field-holder > .input__field').click().wait(1000)
-	cy.get('.location-search-input__input > .input > .input__field-holder > .input__field').type(hoteltestData.hoteldata.travelapp_hotel_location).wait(1000)
-	cy.get('.hotel-form__specifier-container').click().wait(1000)
+	cy.get('.location-search-input__input > .input > .input__field-holder > .input__field').type(hoteltestData.hoteldata.travelapp_hotel_location).wait(3000)
+	cy.get('.hotel-form__specifier-container').click().wait(3000)
 })
 
 Cypress.Commands.add('travelapp_hotel_checkin', () => {
