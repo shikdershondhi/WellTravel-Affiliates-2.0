@@ -34,6 +34,8 @@ describe('hotel Book flow', ()=>{
 		cy.travelapp_Your_Cart()
 		cy.travelapp_Travelers_Information_mybooking()
 		cy.travelapp_invoice()
+		cy.travelapp_Redemption_Vouchers()
+		cy.travelapp_next_step_four()
 	})
 	it('should take order ', ()=> {
 		cy.travelapp_Review_book_continue_to_order()

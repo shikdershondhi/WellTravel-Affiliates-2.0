@@ -11,43 +11,37 @@ describe('visit admin URL', () => {
 		cy.get('.login-pf-page').then(($body) => {
 			if ($body.text().includes('Sign In')) {
 				cy.agent_admin_login()
-				cy.agent_admin_car_selection()
 			} else {
-				cy.agent_admin_car_selection()
+				cy.agent_admin_flight_selection()
 			}
 		})
 	})
 })
 
-describe('admin car Book flow',() =>
+describe('admin flight Book flow',() =>
 {
 	beforeEach(()=>{
 		Cypress.Cookies.defaults({
 			preserve: ['AUTH_SESSION_ID', 'AUTH_SESSION_ID_LEGACY', 'KC_RESTART', 'KEYCLOAK_REMEMBER_ME','chat-server-session', 'io','_agent_session', 'locale', 'remember_token'],
 		})
 	})
-	it.skip('admin car Search box by location', () => {
-		cy.agent_admin_car_Search_by_location()
-		cy.agent_admin_car_Pick_up_location()
-		cy.agent_admin_car_driver_age()
-		cy.agent_admin_car_Pick_up_date()
-		//cy.agent_admin_car_Channels_amadeus()
-		cy.agent_admin_car_search()
+	it('admin flight Search box', () => {
+		cy.agent_admin_flight_select_trip_single()
+		cy.agent_admin_flight_select_travelers()
+		cy.agent_admin_flight_origin_start()
+		cy.agent_admin_flight_destination()
+		cy.agent_admin_flight_start_date()
+		cy.agent_admin_flight_Channels_amadeus()
+		cy.agent_admin_flight_search()
+
 	})
-	it('admin car Search box by airport', () => {
-		cy.agent_admin_car_Search_by_airport()
-		cy.agent_admin_car_Pick_up_airport()
-		cy.agent_admin_car_driver_age()
-		cy.agent_admin_car_Pick_up_date()
-		cy.agent_admin_car_Channels_amadeus()
-		cy.agent_admin_car_search()
-	})
-	it('admin car result page', () => {
-		cy.agent_admin_car_result_page()
+	it('admin flight result page', () => {
+		cy.agent_admin_flight_single_flight_type()
+		cy.agent_admin_flight_continue_to_cart()
 	})
 	it('admin cart', () => {
 		cy.agent_admin_Your_Cart()
-		cy.agent_admin_car_Travelers_Information_booking()
+		cy.agent_admin_flight_Travelers_Information_booking()
 		cy.agent_admin_invoice()
 		cy.agent_admin_Redemption_Vouchers()
 		cy.agent_admin_next_step_four()

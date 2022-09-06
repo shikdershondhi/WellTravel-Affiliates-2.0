@@ -19,19 +19,19 @@ Cypress.Commands.add('travelapp_car_selection', () => {
 })
 
 Cypress.Commands.add('Search_by_location',()=> {
-	cy.get('.search-menu__container--location > .rcl-popover__parent > .search-menu__menu-label > .search-menu__menu-label--icon > .icon > svg').click().wait(1000)
-	cy.get(':nth-child(1) > [data-testid="wrapperWithoutLink"]').click().wait(2000)
+	cy.get('.search-menu__container--location > .rcl-popover__parent > .search-menu__menu-label > .search-menu__menu-label--icon > .icon > svg').click().wait(3000)
+	cy.get(':nth-child(1) > [data-testid="wrapperWithoutLink"]').click().wait(3000)
 })
 
 Cypress.Commands.add('Pick_up_location',()=>{
-	cy.get('.car-form__field--add-padding-right > .location-search-input > .location-search-input__input > .input > .input__field-holder > .input__field').click().wait(1000)
-	cy.get('#panel-2 > div > div > div:nth-child(2) > div.col-12.col-sm-6.col-bleed.car-form__field--add-padding-right > div > div > div > div > input').type(cartestData.cardata.Pick_up_location).wait(1000)
-	cy.get('.search-container').click().wait(2000)
+	cy.get('.car-form__field--add-padding-right > .location-search-input > .location-search-input__input > .input > .input__field-holder > .input__field').click().wait(3000)
+	cy.get('#panel-2 > div > div > div:nth-child(2) > div.col-12.col-sm-6.col-bleed.car-form__field--add-padding-right > div > div > div > div > input').type(cartestData.cardata.Pick_up_location).wait(3000)
+	cy.get('.search-container').click().wait(3000)
 })
 
 Cypress.Commands.add('Search_by_airport',()=> {
-	cy.get('.search-menu__container--location > .rcl-popover__parent > .search-menu__menu-label > .search-menu__menu-label--icon > .icon > svg').click().wait(1000)
-	cy.get(':nth-child(2) > [data-testid="wrapperWithoutLink"]').click().wait(2000)
+	cy.get('.search-menu__container--location > .rcl-popover__parent > .search-menu__menu-label > .search-menu__menu-label--icon > .icon > svg').click().wait(3000)
+	cy.get(':nth-child(2) > [data-testid="wrapperWithoutLink"]').click().wait(3000)
 })
 
 Cypress.Commands.add('Pick_up_airport',()=>{
