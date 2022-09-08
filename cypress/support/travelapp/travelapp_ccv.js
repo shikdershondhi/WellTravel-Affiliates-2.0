@@ -12,6 +12,11 @@ Cypress.Commands.add('travelapp_Add_Payment_Later', () => {
 Cypress.Commands.add('travelapp_next_step_four', () => {
 	cy.get('.button--tertiary > :nth-child(2)').click().wait(3000)
 })
+
+Cypress.Commands.add('travelapp_paygate', () => {
+	cy.get(':nth-child(1) > .paymentsidebar__option-right > .radio > .radio__check').click().wait(3000)
+})
+
 //============== CCV================
 Cypress.Commands.add('travelapp_add_card', () => {
 	cy.get('.credit-card__add-cc-link').click().wait(2000)
