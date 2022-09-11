@@ -10,11 +10,17 @@ Cypress.Commands.add('paygate_ccv',()=>{
 })
 
 Cypress.Commands.add('alart',()=>{
-	cy.get('#nextBtn').click().wait(5000)
-	cy.on('window:alert', (alr)=>{
-		expect(alr).to.equal('Please note that this is a test transaction. This alert does not appear when a LIVE PayGate ID is used.')
-		cy.on('window:confirm', () => true)
-		cy.wait(3333)
-		cy.get(':nth-child(4) > :nth-child(2) > b > input').click().wait(50000)
-	})
+	if(window.top.Cypress){
+		cy.get('#nextBtn').click().wait(30000)
+		cy.on('window:alert', (alr)=>{
+			expect(alr).to.equal('Please note that this is a test transaction. This alert does not appear when a LIVE PayGate ID is used.')
+			cy.get('#alrrtButton').click();
+			cy.on('window:confirm', () => true)
+			cy.get('#result').should('have.text', 'You clicked: Ok')
+			cy.wait(3333)
+			cy.get(':nth-child(4) > :nth-child(2) > b > input').click().wait(50000)
+		})
+	}
 })
+
+//Please note that this is a test transaction. This alert does not appear when a LIVE PayGate ID is used.
