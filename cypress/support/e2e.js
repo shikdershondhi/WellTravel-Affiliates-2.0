@@ -12,6 +12,8 @@ import './agent_admin/agent-admin_car_commands'
 import './agent_admin/agent_admin_ccv'
 import './approval_process/approval_process_commands'
 import './agent_admin/agent_admin_global_policy'
+import './agent_admin/agent_admin_3rd_party_config'
+import './travelapp/travelapp_3rd_party_config'
 import 'cypress-mochawesome-reporter/register'
 
 Cypress.on('uncaught:exception', (err, runnable) => {

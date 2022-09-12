@@ -45,7 +45,6 @@ Cypress.Commands.add('travelapp_Redemption_Vouchers',()=>{
 	cy.get('.col-4 > .input > .input__field-holder > .input__field').wait(1000).type(testData.data.redemptionvouchers).wait(2000)
 })
 
-
 Cypress.Commands.add('travelapp_Review_book_continue_to_order', () => {
 
 	cy.get('.col-12.review-cart-item').then(($body) => {
@@ -60,6 +59,16 @@ Cypress.Commands.add('travelapp_Review_book_continue_to_order', () => {
 	})
 })
 
+Cypress.Commands.add('travelapp_Review_book_continue_to_order_paygate', () => {
+	cy.get('.col-12.review-cart-item').then(($body) => {
+		if ($body.text().includes('Terms and Conditions')) {
+			cy.get('.checkbox__check').click().wait(2000)
+			cy.get('.book-buttons__button-contents > :nth-child(4) > .button').click().wait(15000)
+		} else {
+			cy.get('.book-buttons__button-contents > :nth-child(4) > .button').click().wait(15000)
+		}
+	})
+})
 
 Cypress.Commands.add('travelapp_order_pdf_download', () => {
 	cy.window().document().then(function (doc) {
@@ -69,6 +78,7 @@ Cypress.Commands.add('travelapp_order_pdf_download', () => {
 		cy.get('.public-orders-show__actions > .link > .link__content').click()
 	})
 })
+
 Cypress.Commands.add('travelapp_back_to_landingpage', () => {
 	cy.get('.top-nav__book-button > .link > .link__content').click().wait(1000)
 })
