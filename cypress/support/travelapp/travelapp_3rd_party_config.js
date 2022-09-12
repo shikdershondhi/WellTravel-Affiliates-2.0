@@ -24,3 +24,9 @@ Cypress.Commands.add('alart',()=>{
 })
 
 //Please note that this is a test transaction. This alert does not appear when a LIVE PayGate ID is used.
+
+//====================payfast=========================
+
+Cypress.Commands.add('confirm_pay_payfast',()=>{
+	cy.get('#pay-with-wallet').click().wait(30000)
+})

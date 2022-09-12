@@ -70,6 +70,17 @@ Cypress.Commands.add('travelapp_Review_book_continue_to_order_paygate', () => {
 	})
 })
 
+Cypress.Commands.add('travelapp_Review_book_continue_to_order_payfast', () => {
+	cy.get('.col-12.review-cart-item').then(($body) => {
+		if ($body.text().includes('Terms and Conditions')) {
+			cy.get('.checkbox__check').click().wait(2000)
+			cy.get('.book-buttons__button-contents > :nth-child(4) > .button').click().wait(15000)
+		} else {
+			cy.get('.book-buttons__button-contents > :nth-child(4) > .button').click().wait(15000)
+		}
+	})
+})
+
 Cypress.Commands.add('travelapp_order_pdf_download', () => {
 	cy.window().document().then(function (doc) {
 		doc.addEventListener('click', () => {
