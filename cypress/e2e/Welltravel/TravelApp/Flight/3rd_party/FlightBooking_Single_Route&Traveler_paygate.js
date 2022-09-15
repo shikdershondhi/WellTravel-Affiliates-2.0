@@ -41,8 +41,8 @@ describe('flight Book flow',() =>
 		cy.travelapp_Review_book_continue_to_order_paygate()
 		cy.paygate_ccv()
 	})
-	it('should enter paygate', ()=> {
-		cy.alart()
+	it.skip('should enter paygate', ()=> {
+		cy.paygate_alert()
 	})
 	it('approval process post-process ', ()=> {
 		cy.approval_process_post_and_pdf_download()

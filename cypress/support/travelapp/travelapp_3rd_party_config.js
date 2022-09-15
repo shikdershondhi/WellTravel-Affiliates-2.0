@@ -11,12 +11,12 @@ Cypress.Commands.add('paygate_ccv',()=>{
 	cy.get(':nth-child(4) > :nth-child(2) > b > input').click().wait(50000)
 })
 
-Cypress.Commands.add('alart',()=>{
+Cypress.Commands.add('paygate_alert',()=>{
+		cy.get('#nextBtn').click().wait(30000)
 		cy.on('window:alert', (alr)=>{
-			cy.get('Button').click();
-			expect(alr).to.contains('Please note that this is a test transaction. This alert does not appear when a LIVE PayGate ID is used.')
+			expect(alr).to.contains('Please note that this is a test transaction.' +
+				' This alert does not appear when a LIVE PayGate ID is used.')
 			cy.on('window:confirm', () => true)
-			cy.get('#result').should('have.text', 'You clicked: Ok')
 			cy.wait(3333)
 			cy.get(':nth-child(4) > :nth-child(2) > b > input').click().wait(50000)
 		})
