@@ -3,6 +3,7 @@ const { defineConfig } = require('cypress')
 module.exports = defineConfig({
   chromeWebSecurity: false,
   watchForFileChanges: false,
+  experimentalWebKitSupport: true,
   video: true,
   trashAssetsBeforeRuns: false,
   reporter: 'cypress-mochawesome-reporter',

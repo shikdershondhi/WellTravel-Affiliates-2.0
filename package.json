@@ -102,7 +102,7 @@
 
     "cy-verify-downloads": "^0.1.8",
 
-    "cypress": "^10.7.0",
+    "cypress": "^10.8.0",
 
     "cypress-commands": "^1.1.0",
 
@@ -150,7 +150,9 @@
 
     "lodash": "^4.17.21",
 
-    "mochawesome-merge": "^4.2.1"
+    "mochawesome-merge": "^4.2.1",
+
+    "playwright-webkit": "^1.25.2"
 
   }
 
