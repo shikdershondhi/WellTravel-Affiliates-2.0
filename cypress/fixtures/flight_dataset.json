@@ -17,15 +17,15 @@
 
   "trip_one_origin": "cpt",
   "trip_one_destination": "lhr",
-  "trip_one_flightstartdate": "8 October 2022",
+  "trip_one_flightstartdate": "19 October 2022",
 
   "trip_two_origin": "lhr",
   "trip_two_destination": "cpt",
-  "trip_two_flightstartdate": "14 October 2022",
+  "trip_two_flightstartdate": "23 October 2022",
 
   "trip_three_origin": "ams",
   "trip_three_destination": "dxb",
-  "trip_three_flightstartdate": "20 October 2022"
+  "trip_three_flightstartdate": "28 October 2022"
 
 }
 }
