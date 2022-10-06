@@ -33,7 +33,8 @@ describe('hotel Book flow', ()=>{
 	it('cart', () => {
 		cy.travelapp_Your_Cart()
 		cy.travelapp_Travelers_Information_mybooking()
-		cy.travelapp_invoice()
+		//cy.travelapp_invoice()
+		cy.travelapp_Add_Payment_Later()
 		cy.travelapp_Redemption_Vouchers()
 		cy.travelapp_next_step_four()
 	})
