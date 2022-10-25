@@ -4,44 +4,19 @@ Cypress is a next generation front end testing tool built for the modern web. Th
 
 # How to Start
 1. Clone the project
-2. `npm i` - Install all the dependencies
-3. There are a lot dependencies that are not updated frequently in parallel with cypress. So while installing if you are seeing conflicts use`npm i --force`.
-4. Run `npm test` to execute the tests in Test Runner | Run `npx cypress run` to execute the tests in CLI
-5. To create HTML reports execute first `npm run test:cli` and then `npm run create:html:report`
+2. OS: macOS 10.9 and above (Intel or Apple Silicon 64-bit (x64 or arm64))
+   Linux Ubuntu 12.04 a
+   Windows 7 and above (64-bit only)
+3. install `Node.js 12 or 14 and above`
+4. go to `https://docs.cypress.io/guides/getting-started/installing-cypress` or use the code `npm install cypress --save-dev` in the terminal of the project.
+5. use this code in the terminal:`npm i` - Install all the dependencies 
+6. There are a lot dependencies that are not updated frequently in parallel with cypress. So while installing if you are seeing conflicts use`npm i --force`.
+7. use the code `./node_modules/.bin/cypress open` in the project terminal to open the cypress app
+8. i have also added npm command for it `"cy:open": "cypress open"` in the package file.
+9. please check all the important command using npm in the `package.json` file.
+10. Before running the test scripts please update the `DATASET` inside the FIXTURES folder. (exp: date, url, routes etc based on the language setting)
+####
 
-#####
-please insert this code to package json file
+For better understanding: please visit `https://docs.cypress.io/guides/getting-started/installing-cypress`
 
-# scripts:
-1. "clean:reports" = "rm cypress/reports/mocha/* || true"
-2. "pretest": "npm run clean:reports",
-3. "scripts": "cypress run --record --key 28cc2fb1-43f9-4af5-9303-eae00dae3029",
-4. "combine-reports": "npx mochawesome-merge \"cypress/reports/mocha/*.json\" > mochawesome.json",
-5. "generate-report": "npx marge mochawesome.json -f report -o cypress/reports/mochareports",
-6. "posttest": "npm run combine-reports && npm run generate-report",
-7. "test": "npm run scripts || npm run posttest",
-8. "cy:open": "cypress open",
-9. "cy:run:smoke": "cypress run --headless --spec cypress/integration/productNames.spec.js --browser chrome",
-10. "cy:run:chrome": "cypress run --browser chrome --headed",
-11. "cy:run:chrome--spec": "cypress run --browser chrome --headed --spec",
-12. "cy:run:firefox": "cypress run --browser firefox --headed",
-13. "cy:run:electron": "cypress run --browser electron",
-14. "cy:run:chrome:headless": "cypress run --browser chrome --headless",
-15. "cy:run:firefox:headless": "npx cypress run --spec 'cypress/integration/**.js'  --browser firefox --headless",
-
-________________________________________
-
-
-16. "cy:run:setting:Global_policy_set": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Setting/Global_policy_set.js'  --browser chrome --headed",
-17. "cy:run:setting:Approval_config_pre": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Setting/Approval_config_pre.js'  --browser chrome --headed",
-18. "cy:run:setting:Approval_config_post": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Setting/Approval_config_post.js'  --browser chrome --headed",
-19. "cy:run:FlightBooking_Single_Route&Traveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Flight/FlightBooking_Single_Route&Traveler_invoice.js'  --browser chrome --headed",
-20. "cy:run:HotelBooking_SingleTraveler&location_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Hotel/HotelBooking_SingleTraveler&location_invoice.js'  --browser chrome --headed",
-21. "cy:run:CarBooking_Single_Route&Traveler_Invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/TravelApp/Car/CarBooking_Single_Route&Traveler_Invoice.js'  --browser chrome --headed",
-22. "cy:run:Admin_FlightBooking_Single_Route&Traveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Flight/Admin_FlightBooking_Single_Route&Traveler_invoice.js'  --browser chrome --headed",
-23. "cy:run:Admin_HotelBooking_SingleTraveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Hotel/Admin_HotelBooking_SingleTraveler_invoice.js'  --browser chrome --headed",
-24. "cy:run:Admin_CarBooking_SingleTraveler_invoice": "npx cypress run --spec 'cypress/e2e/Welltravel/Agent_Admin/Car/Admin_CarBooking_SingleTraveler_invoice.js'  --browser chrome --headed"
-
-
-# Running All Specs
-- When you're running your tests from the Test Runner, make sure that none of the tests has `only`, as this basically tells cypress to run that particular test and skip all others.
+For DEMO video: please visit `https://drive.google.com/file/d/16cdJmRRxWz8w1P2kwmdBe_wa7QJDCMuJ/view?usp=sharing`
