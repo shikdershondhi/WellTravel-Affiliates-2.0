@@ -69,7 +69,7 @@ Cypress.Commands.add('travelapp_hotel_search', () => {
 })
 
 Cypress.Commands.add('travelapp_hotel_results', () => {
-	cy.get(':nth-child(1) > .card--v2__wrapper > :nth-child(1) > .card__body-section > .hotel-result__wrapper > :nth-child(1) > .hotel-result__middle > .grid > .col-lg-4 > .col-xlg-5 > a > .button').click().wait(15000)
+	cy.get(':nth-child(1) > .card--v2__wrapper > :nth-child(1) > .card__body-section > .hotel-result__wrapper > :nth-child(1) > .col-lg-8 > .grid > .hotel-result__details > .col-xlg-5 > a > .button').click().wait(15000)
 })
 
 Cypress.Commands.add('travelapp_hotel_select_room', () => {

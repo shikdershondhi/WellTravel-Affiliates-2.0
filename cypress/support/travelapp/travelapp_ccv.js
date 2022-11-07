@@ -2,7 +2,7 @@ import 'cypress-iframe'
 
 //==============invoice================
 Cypress.Commands.add('travelapp_invoice', () => {
-	cy.get(':nth-child(2) > .paymentsidebar__option-right > .radio > .radio__check').click().wait(3000)
+	cy.get(':nth-child(1) > .paymentsidebar__option-right > .radio > .radio__check').click().wait(3000)
 })
 
 Cypress.Commands.add('travelapp_Add_Payment_Later', () => {
