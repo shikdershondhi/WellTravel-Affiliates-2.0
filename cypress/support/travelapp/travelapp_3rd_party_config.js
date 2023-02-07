@@ -8,6 +8,7 @@ Cypress.Commands.add('paygate_ccv',()=>{
 	cy.get('#ccOpYear').select('2023').wait(2000)
 	cy.get('#ccCvv').type('234').wait(2000)
 	cy.get('#nextBtn').click().wait(30000)
+	cy.trigger('confirm')
 	cy.get(':nth-child(4) > :nth-child(2) > b > input').click().wait(50000)
 })
 
@@ -16,9 +17,8 @@ Cypress.Commands.add('paygate_alert',()=>{
 		cy.on('window:alert', (alr)=>{
 			expect(alr).to.contains('Please note that this is a test transaction.' +
 				' This alert does not appear when a LIVE PayGate ID is used.')
-			cy.on('window:confirm', () => true)
-			cy.wait(3333)
-			cy.get(':nth-child(4) > :nth-child(2) > b > input').click().wait(50000)
+			// cy.wait(3333)
+			// cy.get(':nth-child(4) > :nth-child(2) > b > input').click().wait(50000)
 		})
 })
 

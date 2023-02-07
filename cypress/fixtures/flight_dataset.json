@@ -6,8 +6,8 @@
 
   "origin": "ams",
   "destination": "fra",
-  "flightstartdate": "15 October 2022",
-  "flightreturndate": "22 October 2022",
+  "flightstartdate": "10 February 2023",
+  "flightreturndate": "16 February 2023",
   "airlineselectout": "KLM-ROYAL DUTCH AIRLINES",
   "_airlineselectout": "LUFTHANSA GERMAN AIRLINES"
 },
@@ -17,15 +17,15 @@
 
   "trip_one_origin": "cpt",
   "trip_one_destination": "lhr",
-  "trip_one_flightstartdate": "8 October 2022",
+  "trip_one_flightstartdate": "10 February 2023",
 
   "trip_two_origin": "lhr",
   "trip_two_destination": "cpt",
-  "trip_two_flightstartdate": "14 October 2022",
+  "trip_two_flightstartdate": "10 February 2023",
 
   "trip_three_origin": "ams",
   "trip_three_destination": "dxb",
-  "trip_three_flightstartdate": "20 October 2022"
+  "trip_three_flightstartdate": "10 February 2023"
 
 }
 }

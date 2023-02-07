@@ -102,7 +102,7 @@
 
     "cy-verify-downloads": "^0.1.8",
 
-    "cypress": "^10.8.0",
+    "cypress": "^12.5.1",
 
     "cypress-commands": "^1.1.0",
 
@@ -124,7 +124,7 @@
 
     "mochawesome-report-generator": "^6.2.0",
 
-    "pdfreader": "^2.0.0",
+    "pdfreader": "^3.0.0",
 
     "react-selector": "^0.0.5",
 

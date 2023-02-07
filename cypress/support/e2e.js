@@ -19,9 +19,12 @@ import 'cypress-mochawesome-reporter/register'
 Cypress.on('uncaught:exception', (err, runnable) => {
 	return false
 })
-Cypress.Cookies.defaults({
-	preserve: ['session_id', 'remember_token'],
-})
+
+// Cypress.Cookies.defaults({
+// 	preserve: ['session_id', 'remember_token'],
+// })
+cacheAcrossSpecs: true
+
 // Cypress.Cookies.defaults({
 // 	preserve: ['AUTH_SESSION_ID', 'AUTH_SESSION_ID_LEGACY', 'KC_RESTART', 'KEYCLOAK_REMEMBER_ME','chat-server-session', 'io','_agent_session', 'locale', 'remember_token'],
 // })

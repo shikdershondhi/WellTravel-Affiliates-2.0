@@ -25,7 +25,7 @@ Cypress.Commands.add('travelapp_Your_Cart', () => {
 
 	cy.get('.col-lg-8').then(($body) => {
 		if ($body.text().includes('Review Item')) {
-			cy.get('.alert__content-text > .col-grid > .button').click().wait(3000)
+			cy.get('.rcl-alert-container__content > .col-grid > .button').click().wait(3000)
 			cy.get('.item__actions-confirm-button > .button > span').click({ multiple: true }).wait(20000)
 			cy.scrollTo('top',{ensureScrollable: false}).wait(2000)
 			cy.get('.button--tertiary > :nth-child(2)').click().wait(5000)
