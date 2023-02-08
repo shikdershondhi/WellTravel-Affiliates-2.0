@@ -1,12 +1,12 @@
 {
-	"_visitsite": "http://agent-qa.welltravel.com/en-GB#/flights",
-	"_visitsite": "https://welltravel.preview.welltravel.com/#/flights",
-	"visitsite": "https://wellautotng.staging.welltravel.com/#/flights",
-	"_visitsite": "https://flights2.yux.ch/en-GB#/flights",
+	"_visitsite": "",
+	"_visitsite": "",
+	"visitsite": "",
+	"_visitsite": "",
 
 
-	"email": "ehatesham@welldev.io",
-	"_email": "ehatesham.ul-islam@welldev.io",
-	"password": "asdasd123",
+	"email": "",
+	"_email": "",
+	"password": "",
 	"redemptionvouchers":" "
 }
