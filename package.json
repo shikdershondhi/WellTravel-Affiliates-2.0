@@ -1,9 +1,5 @@
 {
 
-  "name": "WellTravel-Affiliates-2.0",
-
-  "description": "",
-
   "main": "index.js",
 
   "scripts": {

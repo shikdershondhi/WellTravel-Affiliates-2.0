@@ -1,10 +1,8 @@
 {
-  "visitsiteadmin": "https://wellautotng.staging.welltravel.com/admin/",
-  "_visitsiteadmin": "https://welltravel.preview.welltravel.com/#/flights",
-  "_visitsiteadmin": "https://wellautotng.staging.welltravel.com/#/flights",
+  "visitsiteadmin": "",
 
 
-  "email": "mac@cc.com",
-  "password": "asdasd123",
+  "email": "",
+  "password": "",
   "redemptionvouchers": " "
 }
